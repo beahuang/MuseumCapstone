@@ -1,0 +1,47 @@
+{
+  "name": "museumcapstone",
+  "version": "1.0.0",
+  "description": "Interaction Team Degree Project, 2016-2017",
+  "main": "index.js",
+  "contributors": [
+    "Alice Young <young.al@husky.neu.edu>",
+    "Amanda Pinsker <pinsker.a@husky.neu.edu>",
+    "Emily O'Brien <obrien.e@husky.neu.edu>",
+    "Evan McEldowney <mceldowney.e@husky.neu.edu>",
+    "Beatrice Huang <huang.be@husky.neu.edu>"
+  ],
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "watch": "webpack-dev-server --content-base ./www",
+    "android": "cordova build; cordova emulate android"
+  },
+  "dependencies": {
+    "css-loader": "^0.26.1",
+    "react": "15.4.2",
+    "react-dom": "15.4.2",
+    "sass-loader": "^6.0.0",
+    "style-loader": "^0.13.1"
+  },
+  "devDependencies": {
+    "babel-core": "6.23.1",
+    "babel-loader": "6.3.0",
+    "babel-preset-node7": "1.5.0",
+    "babel-preset-react": "6.23.0",
+    "extract-text-webpack-plugin": "1.0.1",
+    "file-loader": "^0.10.0",
+    "node-sass": "4.5.0",
+    "sass-loader": "6.0.0",
+    "webpack": "2.2.1",
+    "webpack-dev-server": "2.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/beahuang/MuseumCapstone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beahuang/MuseumCapstone/issues"
+  },
+  "homepage": "https://github.com/beahuang/MuseumCapstone#readme"
+}

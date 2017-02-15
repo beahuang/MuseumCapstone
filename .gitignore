@@ -1,5 +1,9 @@
-# osX
+# Compiled
+www/dist
+
+# OSX
 *.DS_Store
+node_modules
 
 # iOS
 platforms/ios/build/
