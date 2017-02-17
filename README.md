@@ -10,14 +10,17 @@
     different node versions for various projects on the same machine.
   * We're going to keep reasonably updated with the latest Node version.
 
-## How to get Up and Running
+## Development
 1. Clone this repository, and change directory into this repository.
-2. Run `npm install -g cordova` to install cordova
-3. Run `npm install` to install everything else
-4. Run `cordova build` to build the App
+2. Run `npm install` to install everything
+3. Run `npm run watch` to start webpack and the browser-sync server and start developing like it's a normal web app
+
+## How to get Up and Running on a Phone
+1. Run `npm install -g cordova` to install cordova
+2. Run `cordova build` to build the App
 
 ### Android
-1. Run `cordova emulate android` to emulator android or `cordova run android` if you have an android phone plugged in
+1. Run `npm run android` to emulator android or `cordova build` and `cordova run android` if you have an android phone plugged in
 
 ### iOS
 1. Open Xcode and make sure .xcodeproj file is selected in the left panel
