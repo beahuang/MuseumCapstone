@@ -11,12 +11,12 @@
     "Beatrice Huang <huang.be@husky.neu.edu>"
   ],
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "watch": "webpack-dev-server --content-base ./www",
+    "build": "webpack",
+    "watch": "webpack; webpack-dev-server --content-base ./www",
     "android": "cordova build; cordova emulate android"
   },
   "dependencies": {
-    "css-loader": "^0.26.1",
+    "css-loader": "0.26.1",
     "react": "15.4.2",
     "react-dom": "15.4.2",
     "sass-loader": "^6.0.0",
@@ -27,7 +27,7 @@
     "babel-loader": "6.3.0",
     "babel-preset-node7": "1.5.0",
     "babel-preset-react": "6.23.0",
-    "extract-text-webpack-plugin": "1.0.1",
+    "extract-text-webpack-plugin": "2.0.0-rc.3",
     "file-loader": "^0.10.0",
     "node-sass": "4.5.0",
     "sass-loader": "6.0.0",

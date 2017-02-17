@@ -8,15 +8,22 @@ const PATHS = {
 
 module.exports = {
   entry: PATHS.app,
+  output: {
+    path: PATHS.dist,
+    filename: 'bundle.js'
+  },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js?$/,
         loader: 'babel-loader'
       },
       {
         test: /\.scss$/,
-        loader: 'style-loader!css-loader!sass-loader'
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader!sass-loader"
+        })
       },
       {
         test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$/,
@@ -24,8 +31,7 @@ module.exports = {
       },
     ]
   },
-  output: {
-    path: PATHS.dist,
-    filename: 'bundle.js'
-  },
+  plugins: [
+    new ExtractTextPlugin("index.css")
+  ]
 };
