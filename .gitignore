@@ -1,6 +1,8 @@
 # Compiled
 www/dist
 
+npm-debug.log
+
 # OSX
 *.DS_Store
 node_modules
