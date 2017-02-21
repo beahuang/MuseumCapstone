@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Navigation from '../Navigation';
+import Navigation from '../../components/Navigation';
 
-export default class HomeScreen extends Component {
+export default class MapScreen extends Component {
   constructor() {
     super();
     this.state = {
-      title: 'What do you want to see today?',
+      title: 'Map Screen',
     };
   }
 

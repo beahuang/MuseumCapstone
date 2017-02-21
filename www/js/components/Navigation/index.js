@@ -3,11 +3,13 @@ import { Link } from 'react-router';
 
 export default function Navigation() {
   return (
-    <ul>
-      <li><Link to='/tours'>Tours</Link></li>
-      <li><Link to='/timeline'>Timeline</Link></li>
-      <li><Link to='/map'>Map</Link></li>
-      <li><Link to='/browse'>Browse</Link></li>
-    </ul>
+    <nav>
+      <ul>
+        <li><Link to='/' activeClassName='active'>Tours</Link></li>
+        <li><Link to='/timeline' activeClassName='active'>Timeline</Link></li>
+        <li><Link to='/map' activeClassName='active'>Map</Link></li>
+        <li><Link to='/browse' activeClassName='active'>Browse</Link></li>
+      </ul>
+    </nav>
   )
 }

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import Navigation from '../../components/Navigation';
 
-export default class TimelineScreen extends Component {
+export default class TourScreen extends Component {
   constructor() {
     super();
     this.state = {
-      title: 'Timeline Screen',
+      title: 'What do you want to see today?',
     };
   }
 
@@ -12,6 +13,7 @@ export default class TimelineScreen extends Component {
     return (
       <div>
         <p>{ this.state.title }</p>
+        <Navigation/>
       </div>
     );
   }
