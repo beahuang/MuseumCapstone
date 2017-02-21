@@ -3,8 +3,7 @@ require('../scss/index.scss');
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Layout from './components/Layout';
-
+import App from './Containers/App';
 
 const app = document.getElementById('app');
-ReactDOM.render(<Layout/>, app);
+ReactDOM.render(<App/>, app);
