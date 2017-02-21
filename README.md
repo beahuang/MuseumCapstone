@@ -20,7 +20,24 @@
 2. Run `cordova build` to build the App
 
 ### Android
-1. Run `npm run android` to emulator android or `cordova build` and `cordova run android` if you have an android phone plugged in
+
+#### Emulating Android
+1. *Prerequisites:* Make sure you have [Android Studio](https://developer.android.com/studio/index.html)
+installed. If you have [Brew Cask](https://caskroom.github.io/), just run `brew cask install
+android-studio`.
+2. You will also need an Android System Image, and an Emulator Image (AVD).
+
+  1. Download desired System Image by running: `~/Library/Android/sdk/tools/android sdk`
+  2. Create an AVD by running: `~/Library/Android/sdk/tools/android avd`
+
+    HINT: For a faster emulator, use an Intel System Image and install the HAXM device driver.
+
+3. Run `npm run android`
+
+#### Running on a literal Android Phone
+1. Plug in your phone
+2. `cordova build`
+3. `cordova run android`
 
 ### iOS
 1. Open Xcode and make sure .xcodeproj file is selected in the left panel
