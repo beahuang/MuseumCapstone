@@ -12,7 +12,7 @@ export default class TourScreen extends Component {
   render() {
     return (
       <div>
-        <p>{ this.state.title }</p>
+        <h1>{ this.state.title }</h1>
         <Navigation/>
       </div>
     );
