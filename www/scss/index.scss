@@ -1,18 +1,26 @@
+@import 'global';
+@import 'typography';
+
+body {
+  font-family: $default-font;
+}
+
 ul {
   list-style: none;
   margin: 0;
 }
 a {
   text-decoration: none;
-  color: black;
+  color: $black;
 }
 
 nav {
+  @extend .caption-size;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: black;
+  background: $black;
   ul {
     display: flex;
     justify-content: space-around;
@@ -29,7 +37,7 @@ nav {
         fill: white;
       }
       &.active svg {
-        fill: purple;
+        fill: $purple;
       }
     }
   }
