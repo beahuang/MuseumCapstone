@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Navigation from '../../components/Navigation';
 
 export default class TourScreen extends Component {
   constructor() {
@@ -13,7 +12,6 @@ export default class TourScreen extends Component {
     return (
       <div>
         <h1>{ this.state.title }</h1>
-        <Navigation/>
       </div>
     );
   }

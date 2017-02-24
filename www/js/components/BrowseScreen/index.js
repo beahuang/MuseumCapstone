@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Navigation from '../../components/Navigation';
 
 export default class BrowseScreen extends Component {
   constructor() {
@@ -13,7 +12,6 @@ export default class BrowseScreen extends Component {
     return (
       <div>
         <p>{ this.state.title }</p>
-        <Navigation/>
       </div>
     );
   }
