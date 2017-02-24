@@ -2,6 +2,8 @@
 @import 'typography';
 @import 'components/_globalMap';
 
+$navHeight: 65px;
+
 body {
   font-family: $default-font;
   background-color: $gray-light;
@@ -16,9 +18,13 @@ a {
   color: $black;
 }
 
+#app {
+  padding-bottom: $navHeight;
+}
+
 nav {
   @extend .caption-size;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
