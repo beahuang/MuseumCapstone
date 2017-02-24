@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Navigation from '../../components/Navigation';
 
 export default class MapScreen extends Component {
   constructor() {
@@ -13,7 +12,6 @@ export default class MapScreen extends Component {
     return (
       <div>
         <p>{ this.state.title }</p>
-        <Navigation/>
       </div>
     );
   }
