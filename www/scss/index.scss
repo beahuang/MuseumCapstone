@@ -1,7 +1,6 @@
 @import 'global';
 @import 'typography';
-
-// @import '~tachyons/src/_text-align';
+@import 'components/_globalMap';
 
 body {
   font-family: $default-font;
