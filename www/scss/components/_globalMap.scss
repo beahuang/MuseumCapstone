@@ -25,20 +25,45 @@
   }
 }
 
-.mapFeatureSwitcher {
+.mapHighlightFeatures {
   .toggle {
     @extend .fl;
     @extend .w-third;
     @extend .tc;
 
     button {
-      @extend .dib;
+      @extend .db;
       @extend .br-100;
       margin: 0 auto;
       border: none;
       width: 68px;
       height: 68px;
-      background-color: $green;
+      background-color: white;
+
+      svg path {
+        fill: #333;
+      }
+
+      &.green {
+        background-color: $green;
+        svg path {
+          fill: white;
+        }
+      }
+
+      &.red {
+        background-color: $red;
+        svg path {
+          fill: white;
+        }
+      }
+
+      &.blue {
+        background-color: $blue;
+        svg path {
+          fill: white;
+        }
+      }
     }
   }
 }

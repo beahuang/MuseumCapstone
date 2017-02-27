@@ -26,7 +26,11 @@ module.exports = {
         })
       },
       {
-        test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$/,
+        test: /\.svg$/,
+        loader: 'react-svg-loader'
+      },
+      {
+        test: /\.jpe?g$|\.gif$|\.png$|\.woff$|\.ttf$/,
         loader: 'file-loader'
       },
     ]
