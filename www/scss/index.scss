@@ -1,8 +1,10 @@
 @import 'global';
 @import 'typography';
+@import 'components/_globalMap';
 
 body {
   font-family: $default-font;
+  background-color: $gray-light;
 }
 
 ul {

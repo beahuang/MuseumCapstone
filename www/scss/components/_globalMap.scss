@@ -1,0 +1,69 @@
+@import '~tachyons/src/_widths';
+@import '~tachyons/src/_floats';
+@import '~tachyons/src/_display';
+@import '~tachyons/src/_border-radius';
+@import '~tachyons/src/_forms';
+
+.button-row {
+  text-align: center;
+
+  button {
+    @extend .br2;
+    @extend .fw9;
+    color: $gray-dark;
+    background-color: $gray-light-med;
+    font-size: 15px;
+    width: 33px;
+    height: 33px;
+    border: none;
+    margin: 0 5px;
+
+    &.current {
+      background-color: $purple;
+      color: $gray-light;
+    }
+  }
+}
+
+.mapHighlightFeatures {
+  .toggle {
+    @extend .fl;
+    @extend .w-third;
+    @extend .tc;
+
+    button {
+      @extend .db;
+      @extend .br-100;
+      margin: 0 auto;
+      border: none;
+      width: 68px;
+      height: 68px;
+      background-color: white;
+
+      svg path {
+        fill: #333;
+      }
+
+      &.green {
+        background-color: $green;
+        svg path {
+          fill: white;
+        }
+      }
+
+      &.red {
+        background-color: $red;
+        svg path {
+          fill: white;
+        }
+      }
+
+      &.blue {
+        background-color: $blue;
+        svg path {
+          fill: white;
+        }
+      }
+    }
+  }
+}
