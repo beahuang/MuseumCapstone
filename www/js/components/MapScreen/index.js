@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import IconMapAmenities from '../../icons/Map-Amenities.svg';
-import IconMapBathrooms from '../../icons/Map-Bathrooms.svg';
-import IconMapExits from '../../icons/Map-Exits.svg';
+import IconMapAmenities from '../../icons/Map-Amenities';
+import IconMapBathrooms from '../../icons/Map-Bathrooms';
+import IconMapExits from '../../icons/Map-Exits';
 
 class MapScreen extends Component {
   constructor() {
