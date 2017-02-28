@@ -1,5 +1,15 @@
 import React, { Component } from 'react';
 import { Card, FeaturedCard } from '../Cards';
+import Slider from 'react-slick';
+
+const sliderSettings = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  centerMode: true
+};
 
 export default class TourScreen extends Component {
   constructor() {
@@ -7,6 +17,7 @@ export default class TourScreen extends Component {
     this.state = {
       title: 'What do you want to see today?',
     };
+
   }
 
   render() {
@@ -15,32 +26,65 @@ export default class TourScreen extends Component {
         <h1>{ this.state.title }</h1>
         <div>
           <p><span>Featured Tours</span></p>
-            <FeaturedCard
-              link=''
-              text='Mauri'
-              src='featured.png'
-              text='Art, Design, and Bauhaus'
-              tags={ ['Germany', 'Design'] }
-              buttonText='Preview Tour'
-              />
+            <Slider { ...sliderSettings }>
+              <div>
+                <FeaturedCard
+                  link=''
+                  text='Mauri'
+                  src='featured.png'
+                  text='Art, Design, and Bauhaus'
+                  tags={ ['Germany', 'Design'] }
+                  buttonText='Preview Tour'
+                  />
+              </div>
+              <div>
+                <FeaturedCard
+                  link=''
+                  text='Mauri'
+                  src='featured.png'
+                  text='Art, Design, and Bauhaus'
+                  tags={ ['Germany', 'Design'] }
+                  buttonText='Preview Tour'
+                  />
+              </div>
+              <div>
+                <FeaturedCard
+                  link=''
+                  text='Mauri'
+                  src='featured.png'
+                  text='Art, Design, and Bauhaus'
+                  tags={ ['Germany', 'Design'] }
+                  buttonText='Preview Tour'
+                  />
+              </div>
+            </Slider>
         </div>
 
         <div>
           <p><span>Tour By Mood</span></p>
-            <Card text='Mauri' src='mood.png'/>
-            <Card text='Fusce' src='mood.png'/>
+            <Slider { ...sliderSettings }>
+              <div><Card text='Mauri' src='mood.png'/></div>
+              <div><Card text='Fusce' src='mood.png'/></div>
+              <div><Card text='Mauri' src='mood.png'/></div>
+            </Slider>
         </div>
 
         <div>
           <p><span>Tour by theme</span></p>
-            <Card text='Vesti' src='theme.png'/>
-            <Card text='Fusce' src='theme.png'/>
+          <Slider { ...sliderSettings }>
+            <div><Card text='Fusce' src='theme.png'/></div>
+            <div><Card text='Vesti' src='theme.png'/></div>
+            <div><Card text='Fusce' src='theme.png'/></div>
+          </Slider>
         </div>
 
         <div>
           <p><span>Tour by color</span></p>
-            <Card text='Nam' src='color.png'/>
-            <Card text='Donec' src='color.png'/>
+          <Slider { ...sliderSettings }>
+            <div><Card text='Nam' src='color.png'/></div>
+            <div><Card text='Donec' src='color.png'/></div>
+            <div><Card text='Nam' src='color.png'/></div>
+          </Slider>
         </div>
 
         <div>

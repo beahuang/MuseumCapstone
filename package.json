@@ -20,6 +20,7 @@
     "react": "15.4.2",
     "react-dom": "15.4.2",
     "react-router": "3.0.2",
+    "react-slick": "0.14.2",
     "sass-loader": "6.0.0",
     "style-loader": "0.13.1",
     "tachyons": "~4.6.2"
@@ -27,6 +28,7 @@
   "devDependencies": {
     "babel-core": "6.23.1",
     "babel-loader": "6.3.0",
+    "babel-plugin-transform-object-rest-spread": "6.23.0",
     "babel-preset-node7": "1.5.0",
     "babel-preset-react": "6.23.0",
     "browser-sync": "2.18.8",
