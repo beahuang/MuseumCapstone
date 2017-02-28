@@ -36,10 +36,10 @@ class MapScreen extends Component {
 
     return allFloors.map(floor =>
       <button
-        className={this.state.floorLevel === floor ? 'current' : ''}
-        key={floor}
-        onClick={() => this._setFloor(floor)}>
-        {floor}
+        className={ this.state.floorLevel === floor ? 'current' : '' }
+        key={ floor }
+        onClick={ () => this._setFloor(floor) }>
+        { floor }
       </button>
     );
   }
@@ -63,10 +63,10 @@ class MapScreen extends Component {
     return (
       <div>
         <div className='button-row'>
-          {this._renderButtonRow()}
+          { this._renderButtonRow() }
         </div>
 
-        <img className='w-100' src={`../../www/img/maps/floor-${this.state.floorLevel}.svg`}/>
+        <img className='w-100' src={ `../../www/img/maps/floor-${ this.state.floorLevel }.svg` }/>
 
         <hr/>
         <h2 className='tc'>Need to find something?</h2>
@@ -74,24 +74,24 @@ class MapScreen extends Component {
         <div className='mapHighlightFeatures'>
           <div className='toggle'>
             <button
-              onClick={() => this._toggleHighlight('amenities')}
-              className={this.state.highlights.amenities ? 'green' : ''}>
+              onClick={ () => this._toggleHighlight('amenities') }
+              className={ this.state.highlights.amenities ? 'green' : '' }>
               <IconMapAmenities/>
             </button>
             Amenities
           </div>
           <div className='toggle'>
             <button
-              onClick={() => this._toggleHighlight('bathrooms')}
-              className={this.state.highlights.bathrooms ? 'blue' : ''}>
+              onClick={ () => this._toggleHighlight('bathrooms') }
+              className={ this.state.highlights.bathrooms ? 'blue' : '' }>
               <IconMapBathrooms/>
             </button>
             Bathrooms
           </div>
           <div className='toggle'>
             <button
-              onClick={() => this._toggleHighlight('exits')}
-              className={this.state.highlights.exits ? 'red' : ''}>
+              onClick={ () => this._toggleHighlight('exits') }
+              className={ this.state.highlights.exits ? 'red' : '' }>
               <IconMapExits/>
             </button>
             Exits
