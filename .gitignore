@@ -27,3 +27,6 @@ platforms/android/CordovaLib/build/*
 platforms/android/CordovaLib/gen
 platforms/android/CordovaLib/local.properties
 platforms/android/.gradle
+
+# Private Keys
+.env

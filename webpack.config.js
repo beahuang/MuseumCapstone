@@ -1,4 +1,5 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const PATHS = {
@@ -33,6 +34,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin("index.css")
+    new ExtractTextPlugin("index.css"),
+    new Dotenv()
   ]
 };
