@@ -25,7 +25,7 @@ export default class TourScreen extends Component {
       <div>
         <h1 className="home-title">{ this.state.title }</h1>
         <div className="home-container">
-          <div className="featured-tour-container">
+          <div className="tour-container">
             <div className="featured-card">
               <FeaturedCard
                 link=''
@@ -36,6 +36,8 @@ export default class TourScreen extends Component {
                 buttonText='Preview Tour'
                 />
             </div>
+          </div>
+          <div className="tour-container">
             <div className="featured-card">
               <FeaturedCard
                 link=''
@@ -81,10 +83,12 @@ export default class TourScreen extends Component {
             </div>
           </div>
 
-          <div className="tour-custom-container">
-            <p><span>Do Your Thing</span></p>
-            <Card text='Make my own tour'/>
-            <Card text='I just want to wander'/>
+          <div className="tour-container tour-container--custom">
+            <p className="card-section-label card-section-label--title"><span>Do your thing</span></p>
+            <div className="card-section-cards">
+              <div className="card card-no-img"><Card text='Make my own tour'/></div>
+              <div className="card card-no-img"><Card text='I just want to wander'/></div>
+            </div>
           </div>
         </div>
       </div>
