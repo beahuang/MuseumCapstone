@@ -25,7 +25,7 @@ export default class TourScreen extends Component {
       <div>
         <h1 className="home-title">{ this.state.title }</h1>
         <div className="tour-container">
-          <div>
+          <div className="featured-tour-container">
             <div className="featured-card">
               <FeaturedCard
                 link=''

@@ -19,17 +19,17 @@ export function FeaturedCard( props ) {
   return (
     <a href={ props.link }>
       <div>
-        <img src={ src }/>
-        <div className="featured-card-info">
-          <h3>{ props.text }</h3>
-          <ul>
+        <img className="featured-card--img" src={ src }/>
+        <div className="featured-card--info">
+          <h3 className="featured-card--name">{ props.text }</h3>
+          <ul className="featured-card--tags">
             {
               props.tags.map( ( tag, i ) => {
-                return <li key={ i }>{ tag }</li>
+                return <li className="featured-card--tag" key={ i }>{ tag }</li>
               })
             }
           </ul>
-          <div>{ props.buttonText }</div>
+          <div className="featured-card--button">{ props.buttonText }</div>
         </div>
       </div>
     </a>
