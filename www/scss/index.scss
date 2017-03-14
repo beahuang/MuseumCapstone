@@ -1,10 +1,16 @@
 @import 'global';
 @import 'typography';
 @import 'components/_globalMap';
+@import 'components/_home';
+
+$navHeight: 65px;
+
+$navHeight: 65px;
 
 body {
   font-family: $default-font;
   background-color: $gray-light;
+  margin: 15px;
 }
 
 ul {
@@ -16,13 +22,18 @@ a {
   color: $black;
 }
 
+#app {
+  padding-bottom: $navHeight;
+}
+
 nav {
   @extend .caption-size;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   background: $black;
+  z-index: 1000;
   ul {
     display: flex;
     justify-content: space-around;
@@ -39,7 +50,7 @@ nav {
         fill: white;
       }
       &.active svg {
-        fill: $purple;
+        fill: $light-purple;
       }
     }
   }

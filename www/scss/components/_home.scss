@@ -1,0 +1,147 @@
+.home-title {
+  text-align: left;
+  color: $gray-light-med;
+  font-size: 45px;
+  position: fixed;
+  z-index: -1;
+}
+
+.home-container {
+  padding-top: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+
+}
+
+.tour-container {
+  &:nth-child(1) {
+    align-self: flex-end;
+  }
+
+  &:nth-child(2) {
+    align-self: flex-start;
+  }
+
+  &:nth-child(3) {
+    align-self: center;
+  }
+
+  &:nth-child(4) {
+    align-self: flex-start;
+  }
+
+  &:nth-child(5) {
+    align-self: flex-end;
+  }
+}
+
+.featured-card {
+  position: relative;
+  background-color: white;
+  width: 100%;
+  height: 180px;
+  box-shadow: $shadow;
+
+  .featured-card--img {
+    padding: 10px;
+    height: 160px;
+    display: inline;
+  }
+  
+  .featured-card--info {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    display: inline-block;
+    padding: 10px;
+
+    .featured-card--name {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 10px 0;
+    }
+    
+    .featured-card--tags {
+      padding: 0;
+      margin-bottom: 20px;
+
+      .featured-card--tag {
+        @extend p;
+        display: inline-block;
+        padding-right: 10px;
+        color: $gray-med;
+      }
+    }
+
+    .featured-card--button {
+      @extend .caption-size;
+      display: inline-block;
+      background-color: $purple;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 10px;
+    }
+  }
+}
+
+.tour-container {
+  width: 80%;
+  margin-bottom: 20px;
+}
+.card-section-labels {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-section-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-section-label {
+  display: inline-block;
+  font-size: 20px;
+  color: $gray-med;
+  margin: 15px 0; 
+}
+
+.card-section-label--title {
+  font-weight: 500;
+}
+
+.card-section-label--more {
+  color: $gray-med;
+  opacity: .5;
+}
+
+
+.card {
+  background-color: white;
+  width: 47%;
+  display: inline-block;
+  box-shadow: $shadow;
+
+  img {
+    width: 100%;
+  }
+
+  p {
+    margin: 0;
+    padding: 8px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+.tour-container--custom {
+  width: 100%;
+}
+
+.card-no-img {
+  padding: 20px 1%;
+}
+
