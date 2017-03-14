@@ -8,7 +8,7 @@ export default function( props ) {
   return (
     <div>
       <img src={ src }/>
-      <div>
+      <div className="card-info">
         <p>{ props.text }</p>
       </div>
     </div>

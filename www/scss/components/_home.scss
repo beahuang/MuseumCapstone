@@ -1,0 +1,63 @@
+.featured-card {
+  position: relative;
+  background-color: white;
+  width: 310px;
+  height: 180px;
+  box-shadow: $shadow;
+  margin: 20px 0;
+
+  img {
+    padding: 10px;
+    height: 160px;
+    display: inline;
+  }
+
+  h3 {
+  }
+  
+  div div {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    display: inline-block;
+    padding: 10px;
+
+    h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 10px 0;
+    }
+    
+    ul {
+      padding: 0;
+
+      li {
+        @extend p;
+        display: inline-block;
+        padding-right: 10px;
+        color: $gray-med;
+      }
+    }
+
+    div {
+      @extend .caption-size;
+      background-color: $purple;
+      color: white;
+      top: 120px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.home-title {
+  text-align: left;
+  color: $gray-light-med;
+  font-size: 45px;
+  position: fixed;
+  z-index: -1;
+}
+
+.tour-container {
+  padding-top: 200px;
+}
