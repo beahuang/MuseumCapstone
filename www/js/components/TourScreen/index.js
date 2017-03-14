@@ -24,7 +24,7 @@ export default class TourScreen extends Component {
     return (
       <div>
         <h1 className="home-title">{ this.state.title }</h1>
-        <div className="tour-container">
+        <div className="home-container">
           <div className="featured-tour-container">
             <div className="featured-card">
               <FeaturedCard
@@ -48,28 +48,40 @@ export default class TourScreen extends Component {
             </div>
           </div>
 
-          <div>
-            <p><span>Tour By Mood</span></p>
-                <div><Card text='Mauri' src='mood.png'/></div>
-                <div><Card text='Fusce' src='mood.png'/></div>
-                <div><Card text='Mauri' src='mood.png'/></div>
+          <div className="tour-container">
+            <div className="card-section-labels"> 
+              <p className="card-section-label card-section-label--title"><span>Tour by mood</span></p>
+              <p className="card-section-label card-section-label--more"><span>See all ></span></p>
+            </div>
+            <div className="card-section-cards">
+              <div className="card"><Card text='Mauri' src='mood.png'/></div>
+              <div className="card"><Card text='Fusce' src='mood.png'/></div>
+            </div>
           </div>
 
-          <div>
-            <p><span>Tour by theme</span></p>
-              <div><Card text='Fusce' src='theme.png'/></div>
-              <div><Card text='Vesti' src='theme.png'/></div>
-              <div><Card text='Fusce' src='theme.png'/></div>
+          <div className="tour-container">
+            <div className="card-section-labels"> 
+              <p className="card-section-label card-section-label--title"><span>Tour by theme</span></p>
+              <p className="card-section-label card-section-label--more"><span>See all ></span></p>
+            </div>
+            <div className="card-section-cards">  
+              <div className="card"><Card text='Fusce' src='theme.png'/></div>
+              <div className="card"><Card text='Vesti' src='theme.png'/></div>
+            </div>
           </div>
 
-          <div>
-            <p><span>Tour by color</span></p>
-              <div><Card text='Nam' src='color.png'/></div>
-              <div><Card text='Donec' src='color.png'/></div>
-              <div><Card text='Nam' src='color.png'/></div>
+          <div className="tour-container">
+            <div className="card-section-labels"> 
+              <p className="card-section-label card-section-label--title"><span>Tour by color</span></p>
+              <p className="card-section-label card-section-label--more"><span>See all ></span></p>
+            </div>
+            <div className="card-section-cards">  
+              <div className="card"><Card text='Nam' src='color.png'/></div>
+              <div className="card"><Card text='Donec' src='color.png'/></div>
+            </div>
           </div>
 
-          <div>
+          <div className="tour-custom-container">
             <p><span>Do Your Thing</span></p>
             <Card text='Make my own tour'/>
             <Card text='I just want to wander'/>
