@@ -20,7 +20,7 @@ export function FeaturedCard( props ) {
     <a href={ props.link }>
       <div>
         <img src={ src }/>
-        <div>
+        <div className="featured-card-info">
           <h3>{ props.text }</h3>
           <ul>
             {

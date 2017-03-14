@@ -15,7 +15,7 @@
   h3 {
   }
   
-  div div {
+  .featured-card-info {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -30,6 +30,7 @@
     
     ul {
       padding: 0;
+      margin-bottom: 20px;
 
       li {
         @extend p;
@@ -41,11 +42,12 @@
 
     div {
       @extend .caption-size;
+      display: inline-block;
       background-color: $purple;
       color: white;
-      top: 120px;
       text-transform: uppercase;
       letter-spacing: 1px;
+      padding: 10px;
     }
   }
 }

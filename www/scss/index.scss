@@ -32,6 +32,7 @@ nav {
   left: 0;
   width: 100%;
   background: $black;
+  z-index: 1000;
   ul {
     display: flex;
     justify-content: space-around;
