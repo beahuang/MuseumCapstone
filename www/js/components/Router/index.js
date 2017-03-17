@@ -7,6 +7,7 @@ import TourScreen from '../TourScreen';
 import TimelineScreen from '../TimelineScreen';
 import MapScreen from '../MapScreen';
 import BrowseScreen from '../BrowseScreen';
+import BrowseSearchResults from '../BrowseSearchResults';
 
 export default function() {
   return (
@@ -16,6 +17,7 @@ export default function() {
         <Route path='timeline' component={ TimelineScreen } />
         <Route path='map' component={ MapScreen } />
         <Route path='browse' component={ BrowseScreen } />
+        <Route path='/search-results' component={ BrowseSearchResults } />
       </Route>
     </Router>
   );

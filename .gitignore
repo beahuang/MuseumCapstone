@@ -1,6 +1,9 @@
 # Compiled
 www/dist
 
+# API key
+www/js/config.js
+
 npm-debug.log
 
 # OSX
