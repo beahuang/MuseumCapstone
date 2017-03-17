@@ -1,0 +1,12 @@
+.browse-screen__container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.browse-screen__item {
+  width: 50%;
+}
+.browse-screen__image {
+  display: block;
+  width: 100%;
+}
