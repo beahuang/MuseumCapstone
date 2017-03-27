@@ -73,6 +73,11 @@
 
 .journey-item-icon {
   @extend .dib;
+  svg {
+    fill: $purple;
+    width: 15px;
+    padding: 0px 7px;
+  }
 }
 
 .journey-item-desc {
