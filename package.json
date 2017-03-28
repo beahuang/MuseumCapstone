@@ -17,14 +17,11 @@
   },
   "dependencies": {
     "axios": "0.15.3",
-    "css-loader": "0.26.1",
     "react": "15.4.2",
     "react-dom": "15.4.2",
     "react-router": "4.0.0",
     "react-router-dom": "4.0.0",
     "react-slick": "0.14.2",
-    "sass-loader": "6.0.0",
-    "style-loader": "0.13.1"
   },
   "devDependencies": {
     "babel-core": "6.24.0",
