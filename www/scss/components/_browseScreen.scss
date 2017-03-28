@@ -1,0 +1,29 @@
+.browse-screen__container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.browse-screen__item {
+  width: 50%;
+}
+.browse-screen__image {
+  display: block;
+  width: 100%;
+}
+
+input[type=search]{
+	margin-left: 5%;
+	width: 90%;
+	font-size: 16px;
+	background-color: $gray-light;
+	padding: 11px 15px;
+	border: 1px solid $gray-light-med;
+	border-radius: 5px;
+	
+}
+
+.search-suggestion{
+	text-align: center;
+	color: $gray-med;
+	line-height: 2.5;
+}
