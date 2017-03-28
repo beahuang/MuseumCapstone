@@ -21,11 +21,11 @@ export default class BrowseScreen extends Component {
       <div>
         <input type='search' name='browse' placeholder='Search Collection'/>
         <div>
-          <h2>Search by keyword, title, artist, object number, or gallery number</h2>
+          <p className="search-prompt">Search by keyword, title, artist, object number, or gallery number</p>
           <ul>
             {
               this.state.popularSearch.map( ( searchTerm, i ) => {
-                return <li className="featured-card--tag" key={ i }>{ searchTerm }</li>
+                return <li className="featured-card--tag search-suggestion" key={ i }>{ searchTerm }</li>
               })
             }
           </ul>

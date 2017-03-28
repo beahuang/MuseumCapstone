@@ -10,7 +10,7 @@ export default class BrowseScreen extends Component {
   constructor() {
     super();
     this.state = {
-      title: 'On view',
+      title: 'Near you',
       popularItems: []
     };
   }
@@ -31,7 +31,7 @@ export default class BrowseScreen extends Component {
           <input type='search' name='browse' placeholder='Search Collection'/>
         </Link>
         <div>
-          <p>{ this.state.title }</p>
+          <h1>{ this.state.title }</h1>
         </div>
         <ul className='browse-screen__container'>
           {
