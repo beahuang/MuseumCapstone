@@ -71,7 +71,7 @@
         @extend p;
         display: inline-block;
         padding-right: 10px;
-        color: $gray-med;
+        color: $gray-dark-med;
       }
     }
 
@@ -104,7 +104,7 @@
 .card-section-label {
   display: inline-block;
   font-size: 20px;
-  color: $gray-med;
+  color: $gray-dark-med;
   margin: 15px 0; 
 }
 
@@ -113,7 +113,7 @@
 }
 
 .card-section-label--more {
-  color: $gray-med;
+  color: $gray-dark-med;
   opacity: .5;
 }
 
