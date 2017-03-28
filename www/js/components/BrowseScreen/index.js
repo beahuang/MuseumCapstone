@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import config from '../../config';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 
 const api_key = config.HARVARD_ART_MUSEUM_API_KEY;

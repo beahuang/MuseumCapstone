@@ -66,7 +66,7 @@ class MapScreen extends Component {
           { this._renderButtonRow() }
         </div>
 
-        <img className='w-100' src={ `../../www/img/maps/floor-${ this.state.floorLevel }.svg` }/>
+        <img className='w-100' src={ `./img/maps/floor-${ this.state.floorLevel }.svg` }/>
 
         <hr/>
         <h2 className='tc'>Need to find something?</h2>
