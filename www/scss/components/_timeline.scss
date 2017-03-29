@@ -1,0 +1,119 @@
+.timeline {
+  .timeline-title {
+    @extend .f3;
+    @extend .tc;
+  }
+}
+
+.journey-date {
+  @extend .fw2;
+  @extend .pv3;
+  @extend .tc;
+  margin: 0;
+  background-color: white;
+}
+
+.journey-item {
+  @extend .dt;
+  @extend .w-100;
+  position: relative;
+
+  padding: 30px 0;
+
+  &:before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 30px;
+    height: 100%;
+    z-index:-1;
+
+    width:2px;
+    background: $gray-light-med;
+  }
+
+  hr {
+  border: 0 solid $gray-light-med;
+  border-top-width: 2px;
+  margin-left: 0;
+  display: block;
+  width: 80%;
+  position: relative;
+  left: 30px;
+
+  &:after {
+    content: '';
+    background: $purple;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: -6px;
+    border-radius: 10px;
+  }
+  }
+}
+
+.journey-item-left {
+  @extend .dtc;
+  @extend .w-60;
+  vertical-align: middle;
+  position: relative;
+}
+
+.journey-item-title {
+  @extend .f3;
+  margin: 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 30px + 15px;
+}
+
+.journey-item-icon {
+  @extend .dib;
+}
+
+.journey-item-desc {
+  @extend .dib;
+  color: $gray-dark-med;
+  padding-left: 15px;
+  vertical-align: top;
+
+  margin: 0;
+}
+
+.journey-item-times {
+  @extend .fw3;
+  color: $gray-med;
+
+  padding-left: 30px + 15px;
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.journey-item-piece-count {
+  @extend .fw3;
+  color: $gray-med;
+
+  text-align: right;
+  width: 100%;
+
+  margin: 0;
+  padding-left: 30px + 15px;
+  padding-right: 15px;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.journey-item-img {
+  @extend .dtc;
+
+  img {
+    @extend .w-100;
+  }
+}
