@@ -1,4 +1,6 @@
 .home-title {
+  margin-left: 15px;
+  margin-right: 15px;
   text-align: left;
   color: $gray-light-med;
   font-size: 45px;
@@ -14,24 +16,16 @@
 }
 
 .tour-container {
-  &:nth-child(1) {
+  &:nth-child(3n+1) {
     align-self: flex-end;
   }
 
-  &:nth-child(2) {
+  &:nth-child(3n+2) {
     align-self: flex-start;
   }
 
-  &:nth-child(3) {
+  &:nth-child(3n) {
     align-self: center;
-  }
-
-  &:nth-child(4) {
-    align-self: flex-start;
-  }
-
-  &:nth-child(5) {
-    align-self: flex-end;
   }
 }
 
@@ -86,6 +80,8 @@
 }
 
 .tour-container {
+  margin-left: 15px;
+  margin-right: 15px;
   width: 80%;
   margin-bottom: 20px;
 }
@@ -135,7 +131,7 @@
 }
 
 .tour-container--custom {
-  width: 100%;
+  width: auto;
 }
 
 .card-no-img {

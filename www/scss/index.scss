@@ -1,17 +1,17 @@
 @import 'global';
 @import 'typography';
+@import 'vendor/tachyons';
 @import 'components/_globalMap';
 @import 'components/_home';
 @import 'components/_browseScreen';
-
-$navHeight: 65px;
+@import 'components/_timeline';
 
 $navHeight: 65px;
 
 body {
   font-family: $default-font;
   background-color: $gray-light;
-  margin: 15px;
+  margin: 0;
 }
 
 ul {
