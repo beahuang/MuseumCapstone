@@ -5,7 +5,7 @@
   }
 }
 
-.journey-date {
+.tour-date {
   @extend .fw2;
   @extend .pv3;
   @extend .tc;
@@ -13,7 +13,7 @@
   background-color: white;
 }
 
-.journey-item {
+.tour-item {
   @extend .dt;
   @extend .w-100;
   position: relative;
@@ -56,14 +56,14 @@
   }
 }
 
-.journey-item-left {
+.tour-item-left {
   @extend .dtc;
   @extend .w-60;
   vertical-align: middle;
   position: relative;
 }
 
-.journey-item-title {
+.tour-item-title {
   @extend .f3;
   margin: 0;
   padding-top: 1em;
@@ -71,7 +71,7 @@
   padding-left: 30px + 15px;
 }
 
-.journey-item-icon {
+.tour-item-icon {
   @extend .dib;
   svg {
     fill: $purple;
@@ -80,7 +80,7 @@
   }
 }
 
-.journey-item-desc {
+.tour-item-desc {
   @extend .dib;
   color: $gray-dark-med;
   padding-left: 15px;
@@ -89,7 +89,7 @@
   margin: 0;
 }
 
-.journey-item-times {
+.tour-item-times {
   @extend .fw3;
   color: $gray-med;
 
@@ -99,7 +99,7 @@
   position: relative;
 }
 
-.journey-item-piece-count {
+.tour-item-piece-count {
   @extend .fw3;
   color: $gray-med;
 
@@ -115,7 +115,7 @@
   bottom: 0;
 }
 
-.journey-item-img {
+.tour-item-img {
   @extend .dtc;
 
   img {
