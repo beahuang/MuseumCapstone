@@ -56,11 +56,19 @@
   }
 }
 
+.tour-header-left,
 .tour-item-left {
   @extend .dtc;
-  @extend .w-60;
   vertical-align: middle;
   position: relative;
+}
+
+.tour-header-left {
+  @extend .w-60;
+}
+
+.tour-item-left {
+  @extend .w-50;
 }
 
 .tour-item-title {

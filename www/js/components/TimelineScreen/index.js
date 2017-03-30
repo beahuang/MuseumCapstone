@@ -8,7 +8,7 @@ function TourHeader(props) {
 
   return(
     <div className='tour-item'>
-      <div className='tour-item-left'>
+      <div className='tour-header-left'>
         <h2 className='tour-item-title'>{props.title}</h2>
 
         <div className='tour-item-row'>
@@ -33,6 +33,29 @@ function TourHeader(props) {
   )
 }
 
+function TourItem(props) {
+  const times = moment(props.timedate).format('h:mm a');
+
+  return(
+    <div className='tour-item'>
+      <div className='tour-item-left'>
+        <div className='tour-item-row'>
+          <div className='tour-item-icon'>
+            <CompassIcon/>
+          </div>
+
+          <h3 className='tour-item-desc'>{props.type}</h3>
+          <hr/>
+          <div className='tour-item-times'>{times}</div>
+        </div>
+      </div>
+      <div className='tour-item-img'>
+        <img src='img/theme.png'/>
+      </div>
+    </div>
+  )
+}
+
 function Tour(props) {
   const date = moment(props.timedate).format('MMMM Do, YYYY');
 
@@ -43,6 +66,7 @@ function Tour(props) {
         title={props.title}
         timedate={props.timedate}
         pieceCount={props.pieceCount}/>
+      {props.children}
     </div>
   )
 }
@@ -60,7 +84,11 @@ export default class TimelineScreen extends Component {
         <Tour
           title='Tour Title'
           timedate='2017-02-17 15:40'
-          pieceCount='20'/>
+          pieceCount='20'>
+          <TourItem
+            timedate='2017-02-17 15:40'
+            type='Photo'/>
+        </Tour>
       </div>
     );
   }
