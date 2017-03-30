@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 
 import CompassIcon from '../../icons/Compass';
 
 function TourHeader(props) {
+  const times = moment(props.timedate).format('h:mm a');
+
   return(
     <div className='tour-item'>
       <div className='tour-item-left'>
@@ -15,9 +18,7 @@ function TourHeader(props) {
 
           <h3 className='tour-item-desc'>Tour</h3>
           <hr/>
-          <div className='tour-item-times'>
-            3:40pm
-          </div>
+          <div className='tour-item-times'>{times}</div>
         </div>
 
         <p className='tour-item-piece-count'>
@@ -33,11 +34,14 @@ function TourHeader(props) {
 }
 
 function Tour(props) {
+  const date = moment(props.timedate).format('MMMM Do, YYYY');
+
   return(
     <div className='tour'>
-      <h4 className='tour-date'>Your Journey from February 14<sup>th</sup>, 2017</h4>
+      <h4 className='tour-date'>Your Journey from {date}</h4>
       <TourHeader
         title={props.title}
+        timedate={props.timedate}
         pieceCount={props.pieceCount}/>
     </div>
   )
@@ -55,6 +59,7 @@ export default class TimelineScreen extends Component {
         <h3 className='timeline-title'>My Timeline</h3>
         <Tour
           title='Tour Title'
+          timedate='2017-02-17 15:40'
           pieceCount='20'/>
       </div>
     );
