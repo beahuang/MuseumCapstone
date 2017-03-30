@@ -79,8 +79,13 @@
   padding-left: 30px + 15px;
 }
 
+.tour-item-row {
+  @extend .dt;
+}
+
 .tour-item-icon {
-  @extend .dib;
+  @extend .dtc;
+  vertical-align: bottom;
   svg {
     fill: $purple;
     width: 15px;
@@ -128,5 +133,27 @@
 
   img {
     @extend .w-100;
+  }
+}
+
+.tour-item-note {
+  @extend .dtc;
+  background-color: $purple;
+  background-blend-mode: multiply;
+  color: white;
+  p {
+    padding: 0 1em;
+  }
+}
+
+.tour-item-fav-desc {
+  color: $gray-dark-med;
+
+  > * {
+    margin: 0;
+  }
+
+  h3 {
+    padding-top: 8px;
   }
 }
