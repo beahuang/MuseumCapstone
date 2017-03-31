@@ -12,8 +12,8 @@ export default class BrowseContainer extends Component {
   constructor() {
     super();
     this.state = {
-      title: 'Near you',
-      popularItems: [],
+      searchTerm: '',
+      browsableItems: [],
       popularSearches: [
         'van gogh',
         'red',
@@ -23,15 +23,20 @@ export default class BrowseContainer extends Component {
         '17th century',
         'Furniture'
       ],
+      tourList: [],
       searching: false
     };
   }
 
   componentWillMount() {
-    axios.get(`http://api.harvardartmuseums.org/object?apikey=${ api_key }&hasimage=1`)
+    this.updateBrowsableItems('');
+  }
+
+  updateBrowsableItems( term ) {
+    axios.get(`http://api.harvardartmuseums.org/object?apikey=${ api_key }&hasimage=1&keyword=${term}`)
     .then( ( res ) => {
       this.setState({
-        popularItems:  res.data.records
+        browsableItems:  res.data.records
       });
     });
   }
@@ -42,21 +47,33 @@ export default class BrowseContainer extends Component {
     });
   }
 
+  setSearchTerm = ( term ) => {
+    this.setState({
+      searchTerm: term
+    });
+    this.updateBrowsableItems( term );
+  }
+
+  updateTourList = ( item ) => {
+    console.log( item );
+  }
+
   render() {
-    if ( this.state.searching ) {
-      return (
-        <BrowseSearch
-          popularSearches={ this.state.popularSearches }
-          setSearching={ this.setSearching }
-        />
-      )
-    } else {
-      return (
-        <BrowseResults
-          setSearching={ this.setSearching }
-          popularItems={ this.state.popularItems }
-        />
-      )
-    }
+
+    return this.state.searching ?
+
+    <BrowseSearch
+      setSearching={ this.setSearching }
+      setSearchTerm={ this.setSearchTerm }
+      popularSearches={ this.state.popularSearches }
+      searchTerm={ this.state.searchTerm }
+    />
+    :
+    <BrowseResults
+      setSearching={ this.setSearching }
+      updateTourList={ this.updateTourList }
+      browsableItems={ this.state.browsableItems }
+      searchTerm={ this.state.searchTerm }
+    />
   }
 }
