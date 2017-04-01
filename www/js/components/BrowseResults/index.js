@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default function BrowseResults( props ) {
   return (
-    <div>
+    <div className='browse-screen__wrapper'>
       <input className='browse-input' type='search' readOnly placeholder='Search Collection'
         onClick={ () => { props.setSearching( true ) } }
         value={ props.searchTerm ? props.searchTerm : '' }/>

@@ -1,0 +1,159 @@
+.timeline {
+  .timeline-title {
+    @extend .f3;
+    @extend .tc;
+  }
+}
+
+.tour-date {
+  @extend .fw2;
+  @extend .pv3;
+  @extend .tc;
+  margin: 0;
+  background-color: white;
+}
+
+.tour-item {
+  @extend .dt;
+  @extend .w-100;
+  position: relative;
+
+  padding: 30px 0;
+
+  &:before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 30px;
+    height: 100%;
+    z-index:-1;
+
+    width:2px;
+    background: $gray-light-med;
+  }
+
+  hr {
+  border: 0 solid $gray-light-med;
+  border-top-width: 2px;
+  margin-left: 0;
+  display: block;
+  width: 80%;
+  position: relative;
+  left: 30px;
+
+  &:after {
+    content: '';
+    background: $purple;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: -6px;
+    border-radius: 10px;
+  }
+  }
+}
+
+.tour-header-left,
+.tour-item-left {
+  @extend .dtc;
+  vertical-align: middle;
+  position: relative;
+}
+
+.tour-header-left {
+  @extend .w-60;
+}
+
+.tour-item-left {
+  @extend .w-50;
+}
+
+.tour-item-title {
+  @extend .f3;
+  margin: 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 30px + 15px;
+}
+
+.tour-item-row {
+  @extend .dt;
+}
+
+.tour-item-icon {
+  @extend .dtc;
+  vertical-align: bottom;
+  svg {
+    fill: $purple;
+    width: 15px;
+    padding: 0px 7px;
+  }
+}
+
+.tour-item-desc {
+  @extend .dib;
+  color: $gray-dark-med;
+  padding-left: 15px;
+  vertical-align: top;
+
+  margin: 0;
+}
+
+.tour-item-times {
+  @extend .fw3;
+  color: $gray-med;
+
+  padding-left: 30px + 15px;
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.tour-item-piece-count {
+  @extend .fw3;
+  color: $gray-med;
+
+  text-align: right;
+  width: 100%;
+
+  margin: 0;
+  padding-left: 30px + 15px;
+  padding-right: 15px;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.tour-item-img {
+  @extend .dtc;
+
+  img {
+    @extend .w-100;
+  }
+}
+
+.tour-item-note {
+  @extend .dtc;
+  background-color: $purple;
+  background-blend-mode: multiply;
+  color: white;
+  p {
+    padding: 0 1em;
+  }
+}
+
+.tour-item-fav-desc {
+  color: $gray-dark-med;
+
+  > * {
+    margin: 0;
+  }
+
+  h3 {
+    padding-top: 8px;
+  }
+}

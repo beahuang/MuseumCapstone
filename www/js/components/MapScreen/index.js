@@ -61,7 +61,7 @@ class MapScreen extends Component {
 
   render() {
     return (
-      <div>
+      <div className='map-screen'>
         <div className='button-row'>
           { this._renderButtonRow() }
         </div>

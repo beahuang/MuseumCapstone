@@ -3,7 +3,7 @@ import CloseIcon from '../../icons/Close.js';
 
 export default function BrowseSearch( props ) {
   return (
-    <div>
+    <div className='browse-screen__wrapper'>
       <CloseIcon className='browse-search--close' onClick={ () => { props.setSearching( false ) } }/>
       <input
         className='browse-input' type='search' placeholder='Search Collection' autoFocus
