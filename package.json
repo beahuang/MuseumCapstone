@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "build": "webpack",
-    "watch": "webpack -w & browser-sync start -s ./www",
+    "watch": "webpack -w & browser-sync start -s ./www --no-notify",
     "android": "cordova build; cordova emulate android"
   },
   "dependencies": {
