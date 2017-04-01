@@ -12,7 +12,7 @@ function TourHeader(props) {
   return(
     <div className='tour-item'>
       <div className='tour-header-left'>
-        <h2 className='tour-item-title'>{props.title}</h2>
+        <h2 className='tour-item-title'>{ props.title }</h2>
 
         <div className='tour-item-row'>
           <div className='tour-item-icon'>
@@ -23,11 +23,11 @@ function TourHeader(props) {
         </div>
 
         <hr/>
-        <div className='tour-item-times'>{times}</div>
+        <div className='tour-item-times'>{ times }</div>
 
         <p className='tour-item-piece-count'>
           30 minutes<br/>
-          {props.pieceCount} pieces
+          { props.pieceCount } pieces
         </p>
       </div>
       <div className='tour-item-img'>
@@ -70,11 +70,11 @@ function TourItem(props) {
   }
 
   function NotePartial(props) {
-    const imgUrl = 'url(' + props.img + ')';
+    const imgUrl = `url(${props.img})`
 
     return(
       <div className='tour-item-note'
-        style={{backgroundImage: imgUrl}}>
+        style={ { backgroundImage: imgUrl } }>
         <p>{props.note}</p>
       </div>
     );
@@ -85,7 +85,7 @@ function TourItem(props) {
       <div className='tour-item-left'>
         <div className='tour-item-row'>
           <div className='tour-item-icon'>
-            {_renderIcon(props.type)}
+            { _renderIcon(props.type) }
            </div>
           <h3 className='tour-item-desc'>{props.type}</h3>
         </div>
@@ -94,7 +94,7 @@ function TourItem(props) {
       </div>
       {
         props.type == 'Note' ?
-        <NotePartial note={props.note} img={props.img} />
+        <NotePartial note={ props.note } img={ props.img } />
         :
         <div className='tour-item-img'>
           <img src='img/theme.png'/>
@@ -113,10 +113,10 @@ function Tour(props) {
     <div className='tour'>
       <h4 className='tour-date'>Your Journey from {date}</h4>
       <TourHeader
-        title={props.title}
-        timedate={props.timedate}
-        pieceCount={props.pieceCount}/>
-      {props.children}
+        title={ props.title }
+        timedate={ props.timedate }
+        pieceCount={ props.pieceCount }/>
+      { props.children }
     </div>
   )
 }
