@@ -4,7 +4,7 @@ import { Provider, connect } from 'react-redux';
 
 import Navigation from '../../components/Navigation';
 
-import TourScreen from '../TourScreen';
+import HomeScreen from '../HomeScreen';
 import TimelineScreen from '../TimelineScreen';
 import MapScreen from '../MapScreen';
 import BrowseContainer from '../../containers/BrowseContainer';
@@ -15,7 +15,7 @@ const ConnectedRouter = ({ store }) => (
       <div>
         <Route path="/" render={ matchProps =>
             <Switch>
-              <Route exact path="/" render={ matchProps => <TourScreen { ...matchProps }/> }/>
+              <Route exact path="/" render={ matchProps => <HomeScreen { ...matchProps }/> }/>
               <Route path="/timeline" render={ matchProps => <TimelineScreen { ...matchProps }/> }/>
               <Route path="/map" render={ matchProps => <MapScreen { ...matchProps }/> }/>
               <Route path="/browse" render={ matchProps => <BrowseContainer { ...matchProps }/> }/>

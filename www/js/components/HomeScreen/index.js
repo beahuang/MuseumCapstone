@@ -11,7 +11,7 @@ const sliderSettings = {
   centerMode: true
 };
 
-export default class TourScreen extends Component {
+export default class HomeScreen extends Component {
   constructor() {
     super();
     this.state = {
@@ -51,7 +51,7 @@ export default class TourScreen extends Component {
           </div>
 
           <div className="tour-container">
-            <div className="card-section-labels"> 
+            <div className="card-section-labels">
               <p className="card-section-label card-section-label--title"><span>Tour by mood</span></p>
               <p className="card-section-label card-section-label--more"><span>See all ></span></p>
             </div>
@@ -62,22 +62,22 @@ export default class TourScreen extends Component {
           </div>
 
           <div className="tour-container">
-            <div className="card-section-labels"> 
+            <div className="card-section-labels">
               <p className="card-section-label card-section-label--title"><span>Tour by theme</span></p>
               <p className="card-section-label card-section-label--more"><span>See all ></span></p>
             </div>
-            <div className="card-section-cards">  
+            <div className="card-section-cards">
               <div className="card"><Card text='Fusce' src='theme.png'/></div>
               <div className="card"><Card text='Vesti' src='theme.png'/></div>
             </div>
           </div>
 
           <div className="tour-container">
-            <div className="card-section-labels"> 
+            <div className="card-section-labels">
               <p className="card-section-label card-section-label--title"><span>Tour by color</span></p>
               <p className="card-section-label card-section-label--more"><span>See all ></span></p>
             </div>
-            <div className="card-section-cards">  
+            <div className="card-section-cards">
               <div className="card"><Card text='Nam' src='color.png'/></div>
               <div className="card"><Card text='Donec' src='color.png'/></div>
             </div>
