@@ -28,25 +28,23 @@ export default class HomeScreen extends Component {
           <div className="tour-container">
             <div className="featured-card">
               <FeaturedCard
-                link=''
                 text='Mauri'
                 src='featured.png'
                 text='Art, Design, and Bauhaus'
                 tags={ ['Germany', 'Design'] }
                 buttonText='Preview Tour'
-                />
+              />
             </div>
           </div>
           <div className="tour-container">
             <div className="featured-card">
               <FeaturedCard
-                link=''
                 text='Mauri'
                 src='featured.png'
                 text='Art, Design, and Bauhaus'
                 tags={ ['Germany', 'Design'] }
                 buttonText='Preview Tour'
-                />
+              />
             </div>
           </div>
 
