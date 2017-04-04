@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-function TourItemRow( stop ) {
+function TourItemRow( stop, i ) {
   return (
-    <div>
+    <div key={ i }>
       <h3>{stop.pieceTitle}</h3>
       <span>{stop.pieceBy}, {stop.year}</span>
     </div>
@@ -48,7 +48,7 @@ export default class TourOverview extends Component {
         <h2>{mockTourObject.title}</h2>
         <button>Add to Tour</button>
         <button>End Tour</button>
-        {mockTourObject.stops.map( stop => TourItemRow(stop))}
+        {mockTourObject.stops.map( (stop, i) => TourItemRow(stop, i))}
         <button>Start Tour</button>
       </div>
     );
