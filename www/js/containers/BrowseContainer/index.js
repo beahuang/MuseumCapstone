@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import config from '../../config';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { ActionCreators } from '../../actions';
 
 import BrowseResults from '../../components/BrowseResults';
 import BrowseSearch from '../../components/BrowseSearch';
 
 const api_key = config.HARVARD_ART_MUSEUM_API_KEY;
 
-export default class BrowseContainer extends Component {
+class BrowseContainer extends Component {
   constructor() {
     super();
     this.state = {
@@ -55,7 +58,7 @@ export default class BrowseContainer extends Component {
   }
 
   updateTourList = ( item ) => {
-    console.log( item );
+    this.props.addToTour( item );
   }
 
   render() {
@@ -77,3 +80,9 @@ export default class BrowseContainer extends Component {
     />
   }
 }
+
+function mapDispatchToProps( dispatch ) {
+  return bindActionCreators( ActionCreators, dispatch );
+}
+
+export default connect( null, mapDispatchToProps )( BrowseContainer );
