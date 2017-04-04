@@ -11,6 +11,7 @@ import BrowseContainer from '../../containers/BrowseContainer';
 import TourOverview from '../../containers/TourOverviewContainer';
 import CustomizeTour from '../../containers/CustomizeTourContainer';
 import WanderContainer from '../../containers/WanderContainer';
+import PieceContainer from '../../containers/Piece';
 
 const ConnectedRouter = ({ store }) => (
   <Provider store={ store }>
@@ -25,6 +26,7 @@ const ConnectedRouter = ({ store }) => (
               <Route path='/tour' render={ matchProps => <TourOverview { ...matchProps }/> } />
               <Route path='/customize-tour' render={ matchProps => <CustomizeTour { ...matchProps }/> } />
               <Route path='/wander' render={ matchProps => <WanderContainer { ...matchProps }/> } />
+              <Route path='/piece/:id' render={ matchProps => <PieceContainer { ...matchProps }/> } />
             </Switch>
           } />
         <Navigation/>
