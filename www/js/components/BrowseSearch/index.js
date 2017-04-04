@@ -8,10 +8,18 @@ export default function BrowseSearch( props ) {
       <input
         className='browse-input' type='search' placeholder='Search Collection' autoFocus
         defaultValue={ props.searchTerm ? props.searchTerm : '' }
-        onBlur={ evt => {
-          if ( evt.target.value ) {
+        onFocus={ evt => {
+          evt.target.value = '';
+        }}
+        onKeyPress={ evt => {
+          if ( evt.key === 'Enter' ) {
             props.setSearchTerm( evt.target.value );
             props.setSearching( false );
+          }
+        }}
+        onBlur={ evt => {
+          if ( evt.target.value === '' ) {
+            props.setSearchTerm( evt.target.value );
           }
         }}
         />
