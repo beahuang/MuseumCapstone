@@ -10,6 +10,7 @@ import BrowseResults from '../../components/BrowseResults';
 import BrowseSearch from '../../components/BrowseSearch';
 
 const api_key = config.HARVARD_ART_MUSEUM_API_KEY;
+axios.defaults.baseURL = 'http://api.harvardartmuseums.org';
 
 class BrowseContainer extends Component {
   constructor() {
@@ -26,7 +27,6 @@ class BrowseContainer extends Component {
         '17th century',
         'Furniture'
       ],
-      tourList: [],
       searching: false
     };
   }
@@ -36,29 +36,33 @@ class BrowseContainer extends Component {
   }
 
   updateBrowsableItems( term ) {
-    axios.get(`http://api.harvardartmuseums.org/object?apikey=${ api_key }&hasimage=1&keyword=${term}`)
-    .then( ( res ) => {
+    axios.get(`/object?apikey=${ api_key }&hasimage=1&keyword=${term}`)
+    .then( res => {
       this.setState({
         browsableItems:  res.data.records
       });
     });
   }
 
-  setSearching = ( bool ) => {
+  setSearching = bool => {
     this.setState({
       searching: bool
     });
   }
 
-  setSearchTerm = ( term ) => {
+  setSearchTerm = term => {
     this.setState({
       searchTerm: term
     });
     this.updateBrowsableItems( term );
   }
 
-  updateTourList = ( item ) => {
-    this.props.addToTour( item );
+  updateTourList = item => {
+    if ( this.props.tourItems.indexOf( item ) >= 0 ) {
+      this.props.removeFromTour( item );
+    } else {
+      this.props.addToTour( item );
+    }
   }
 
   render() {
@@ -77,12 +81,19 @@ class BrowseContainer extends Component {
       updateTourList={ this.updateTourList }
       browsableItems={ this.state.browsableItems }
       searchTerm={ this.state.searchTerm }
+      tourItems={ this.props.tourItems }
     />
   }
+}
+
+function mapStateToProps( state ) {
+  return {
+    tourItems: state.tourItems,
+  };
 }
 
 function mapDispatchToProps( dispatch ) {
   return bindActionCreators( ActionCreators, dispatch );
 }
 
-export default connect( null, mapDispatchToProps )( BrowseContainer );
+export default connect( mapStateToProps, mapDispatchToProps )( BrowseContainer );

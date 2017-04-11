@@ -6,3 +6,10 @@ export const addToTour = ( item ) => {
     item: item,
   }
 }
+
+export const removeFromTour = ( item ) => {
+  return {
+    type: types.REMOVE_FROM_TOUR,
+    item: item,
+  }
+}

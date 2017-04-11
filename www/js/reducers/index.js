@@ -3,13 +3,18 @@ import * as types from '../actions/types';
 const activeTour = ( state = {}, action = {} ) => {
   switch ( action.type ) {
     case types.ADD_TO_TOUR:
-      state.tourItems = state.tourItems ?
+      let addedItems = state.tourItems ?
         [ ...state.tourItems, action.item ] :
         [ action.item ];
-      return state;
+      return { ...state, tourItems: addedItems };
+
+    case types.REMOVE_FROM_TOUR:
+      let filteredItems = state.tourItems.filter( value => { return value !== action.item } );
+      return { ...state, tourItems: filteredItems };
 
     default:
-      return state;
+      state.tourItems = [];
+      return state.tourItems = [];;
   }
 }
 
