@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { Provider, connect } from 'react-redux';
 
 import Navigation from '../../components/Navigation';
 
@@ -8,9 +9,8 @@ import TimelineScreen from '../TimelineScreen';
 import MapScreen from '../MapScreen';
 import BrowseContainer from '../../containers/BrowseContainer';
 
-
-export default function() {
-  return (
+const ConnectedRouter = ({ store }) => (
+  <Provider store={ store }>
     <Router>
       <div>
         <Route path="/" render={ matchProps =>
@@ -24,5 +24,7 @@ export default function() {
         <Route path="/" component={ Navigation } />
       </div>
     </Router>
-  );
-}
+  </Provider>
+);
+
+export default ConnectedRouter;
