@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AddPieceModal from '../AddPieceModal';
+import { NavLink } from 'react-router-dom';
 
 export default class BrowseResults extends Component {
   constructor() {
@@ -30,13 +31,19 @@ export default class BrowseResults extends Component {
               return (
                 <li className='browse-screen__item' key={ i }
                   onClick={ evt => this.setActiveItem( item ) }>
-                  <img className='browse-screen__image' src={ item.primaryimageurl }/>
+                  {
+                    this.props.isTourActive
+                    ? <img className='browse-screen__image' src={ item.primaryimageurl }/>
+                    : <NavLink to='/browse' activeClassName='active'>
+                        <img className='browse-screen__image' src={ item.primaryimageurl }/>
+                      </NavLink>
+                  }
                 </li>
               )
             })
           }
         </ul>
-        { this.state.activeItem ?
+        { this.props.isTourActive && this.state.activeItem ?
           <AddPieceModal
             activeItem={ this.state.activeItem }
             title='Add this piece to your tour?'
