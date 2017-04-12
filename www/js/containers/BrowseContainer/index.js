@@ -58,11 +58,7 @@ class BrowseContainer extends Component {
   }
 
   updateTourList = item => {
-    if ( this.props.tourItems.indexOf( item ) >= 0 ) {
-      this.props.removeFromTour( item );
-    } else {
-      this.props.addToTour( item );
-    }
+    this.props.addToTour( item );
   }
 
   render() {
@@ -82,6 +78,7 @@ class BrowseContainer extends Component {
       browsableItems={ this.state.browsableItems }
       searchTerm={ this.state.searchTerm }
       tourItems={ this.props.tourItems }
+      isTourActive={ this.state.isTourActive }
     />
   }
 }
@@ -89,6 +86,7 @@ class BrowseContainer extends Component {
 function mapStateToProps( state ) {
   return {
     tourItems: state.tourItems,
+    isTourActive: state.isTourActive
   };
 }
 
