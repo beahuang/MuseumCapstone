@@ -32,11 +32,13 @@ class BrowseContainer extends Component {
   }
 
   componentWillMount() {
-    this.updateBrowsableItems('');
+    this.updateBrowsableItems();
   }
 
-  updateBrowsableItems( term ) {
-    axios.get(`/object?apikey=${ api_key }&hasimage=1&keyword=${term}`)
+  updateBrowsableItems( term = '', isOnView = false ) {
+    let keyword = term ? `&keyword=${term}`: '';
+    let onView = isOnView ? '&gallery=any': '';
+    axios.get(`/object?apikey=${ api_key }&hasimage=1${keyword}${onView}`)
     .then( res => {
       this.setState({
         browsableItems:  res.data.records
@@ -61,8 +63,11 @@ class BrowseContainer extends Component {
     this.props.addToTour( item );
   }
 
-  render() {
+  setOnView = bool => {
+    this.updateBrowsableItems( this.state.searchTerm, bool );
+  }
 
+  render() {
     return this.state.searching ?
 
     <BrowseSearch
@@ -75,6 +80,7 @@ class BrowseContainer extends Component {
     <BrowseResults
       setSearching={ this.setSearching }
       updateTourList={ this.updateTourList }
+      setOnView={ this.setOnView }
       browsableItems={ this.state.browsableItems }
       searchTerm={ this.state.searchTerm }
       tourItems={ this.props.tourItems }

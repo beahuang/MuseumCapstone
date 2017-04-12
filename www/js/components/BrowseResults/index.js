@@ -24,6 +24,13 @@ export default class BrowseResults extends Component {
           value={ this.props.searchTerm ? this.props.searchTerm : '' }/>
         <div>
           <h1>{ this.props.searchTerm ? this.props.searchTerm : 'Near You' }</h1>
+          { this.props.searchTerm
+            ? <div>
+              <p onClick={ () => { this.props.setOnView( false ) } }>all</p>
+              <p onClick={ () => { this.props.setOnView( true ) } }>on view</p>
+              </div>
+            : null
+          }
         </div>
         <ul className='browse-screen__container'>
           {
