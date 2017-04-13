@@ -7,10 +7,11 @@ const initialState = {
 
 const activeTour = ( state = initialState, action = {} ) => {
   switch ( action.type ) {
+    case types.CREATE_TOUR:
+      return { ...state, tourItems: action.tour }
+
     case types.ADD_TO_TOUR:
-      let addedItems = state.tourItems ?
-        [ ...state.tourItems, action.item ] :
-        [ action.item ];
+      let addedItems = state.tourItems ? [ ...state.tourItems, action.item ] : [ action.item ];
       return { ...state, tourItems: addedItems };
 
     case types.REMOVE_FROM_TOUR:

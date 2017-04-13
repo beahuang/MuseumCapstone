@@ -20,7 +20,6 @@ const ConnectedRouter = ({ store }) => (
               <Route path="/timeline" render={ matchProps => <TimelineScreen { ...matchProps }/> }/>
               <Route path="/map" render={ matchProps => <MapScreen { ...matchProps }/> }/>
               <Route path="/browse" render={ matchProps => <BrowseContainer { ...matchProps }/> }/>
-
               <Route path='/tour' render={ matchProps => <TourOverview { ...matchProps }/> } />
             </Switch>
           } />
