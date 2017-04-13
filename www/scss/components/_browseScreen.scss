@@ -33,3 +33,30 @@
   position: absolute;
   right: 20px;
 }
+
+.modal--add-piece {
+  background-color: #110626;
+  color: white;
+  padding: 20px 20px 40px;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  margin: 0 20px;
+  h3 {
+    font-size: 40px;
+    text-align: center;
+    margin: 10px 20px 20px;
+    font-weight: 300;
+  }
+  > div {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+  }
+  .modal--image {
+    padding: 0px 15px;
+    box-sizing: border-box;
+  }
+}

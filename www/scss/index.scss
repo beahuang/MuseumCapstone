@@ -57,3 +57,21 @@ nav {
     }
   }
 }
+
+.button {
+  color: white;
+  background: #6B23F5;
+  padding: 15px 40px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.arrow {
+  fill: white;
+  &--down {
+  transform: rotate(180deg);
+  }
+  &--purple {
+    fill: $purple;
+  }
+}
