@@ -1,0 +1,69 @@
+.customize-tour--background {
+  background-color: $dark-purple;
+  height: 100vh;
+  color: white;
+
+  .arrow--left {
+    float: left;
+    margin: 20px 5px;
+  }
+  & + nav {
+    display: none;
+  }
+}
+
+.customize-tour--wrapper {
+  margin: 0 25px;
+  padding-top: 60px;
+}
+
+.customize-tour--label {
+  margin: 0;
+}
+
+.customize-grid {
+  columns: 3;
+  .customize-grid--img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.customize-slider {
+  -webkit-appearance: none;
+  background-color: $purple;
+  width: 100%;
+  height: 5px;
+  margin: 20px 0;
+  outline: none;
+}
+/* Special styling for WebKit/Blink */
+.customize-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* All the same stuff for Firefox */
+.customize-slider::-moz-range-thumb {
+  border: 1px solid #000000;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+.customize-slider::-ms-thumb {
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}

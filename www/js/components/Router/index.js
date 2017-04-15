@@ -9,6 +9,7 @@ import TimelineScreen from '../TimelineScreen';
 import MapScreen from '../MapScreen';
 import BrowseContainer from '../../containers/BrowseContainer';
 import TourOverview from '../TourOverview';
+import CustomizeTour from '../CustomizeTour';
 
 const ConnectedRouter = ({ store }) => (
   <Provider store={ store }>
@@ -21,6 +22,7 @@ const ConnectedRouter = ({ store }) => (
               <Route path="/map" render={ matchProps => <MapScreen { ...matchProps }/> }/>
               <Route path="/browse" render={ matchProps => <BrowseContainer { ...matchProps }/> }/>
               <Route path='/tour' render={ matchProps => <TourOverview { ...matchProps }/> } />
+              <Route path='/customize-tour' render={ matchProps => <CustomizeTour { ...matchProps }/> } />
             </Switch>
           } />
         <Navigation/>

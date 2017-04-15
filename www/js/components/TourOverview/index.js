@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import config from '../../config';
 
@@ -52,7 +53,7 @@ export default class TourOverview extends Component {
         <h2>{ this.state.title }</h2>
         <p>{ this.state.tags }</p>
         <div className='button'>Start Tour</div>
-        <div className='button'>Customize Tour</div>
+        <div className='button'><Link to='customize-tour'>Customize Tour</Link></div>
         <p>{ this.state.description }</p>
         <div>
           <h3>Tour Overview</h3>

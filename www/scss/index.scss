@@ -5,6 +5,7 @@
 @import 'components/_home';
 @import 'components/_browseScreen';
 @import 'components/_timeline';
+@import 'components/_customizeTour';
 
 $navHeight: 65px;
 
@@ -67,9 +68,12 @@ nav {
 }
 
 .arrow {
-  fill: white;
+  &--white {
+    fill: white;
+    transform: rotate(-90deg);
+  }
   &--down {
-  transform: rotate(180deg);
+    transform: rotate(180deg);
   }
   &--purple {
     fill: $purple;
