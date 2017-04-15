@@ -41,7 +41,7 @@ export default class BrowseResults extends Component {
                   {
                     this.props.isTourActive
                     ? <img className='browse-screen__image' src={ item.primaryimageurl }/>
-                    : <Link to='/browse' activeClassName='active'>
+                    : <Link to='/browse'>
                         <img className='browse-screen__image' src={ item.primaryimageurl }/>
                       </Link>
                   }

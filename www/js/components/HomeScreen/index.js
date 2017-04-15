@@ -28,7 +28,7 @@ export default class HomeScreen extends Component {
           <div className="tour-container">
             <div className="featured-card">
               <FeaturedCard
-                src='featured.png'
+                src='western-fashion.png'
                 title='Western Fashion: Fabric and Finery'
                 tags={ ['Design', 'Clothing', 'International'] }
                 buttonText='Preview Tour'

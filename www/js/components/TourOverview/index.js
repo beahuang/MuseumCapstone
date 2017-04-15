@@ -1,16 +1,26 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import config from '../../config';
+
+const api_key = config.HARVARD_ART_MUSEUM_API_KEY;
+axios.defaults.baseURL = 'http://api.harvardartmuseums.org';
+
+const objectNumbers = ['1951.60', '1943.100', '1945.27'];
 
 export default class TourOverview extends Component {
   constructor( props ) {
     super( props );
+
+    this.state = {
+      stops: []
+    }
   }
 
   componentWillMount() {
     if ( this.props.location.state ) {
-      const tags = this.props.location.tags.join(', ');
-
+      const tags = this.props.location.state.tags.join(', ');
       this.setState({
-        featuredImg: this.props.location.state.src,
+        featuredImg: `./img/${this.props.location.state.src}`,
         title: this.props.location.state.title,
         tags: tags
       });
@@ -19,39 +29,20 @@ export default class TourOverview extends Component {
         featuredImg: './img/featured.png',
         title: 'Title',
         tags: 'Design',
-        description: 'Practice, style, and trends define fashion. Fashion in turn defines the people that wear it. Who is wearing what and why? Whether the ninth or the nineteenth century identity is channeled through clothing. Class, power, and prestige are communicated through color, material, and cut. From Tuxedos to tunics each piece of clothing communicates something unique about who these people are and what they want to present. The tour will focus on the subjects and how their clothing illustrates who they want to represent',
-        stops: [
-          {
-            harvardId: 124,
-            pieceTitle: 'One piece',
-            pieceBy: 'Paul Klee',
-            year: '1969',
-            image: './img/1-klee.jpg'
-          },
-          {
-            harvardId: 125,
-            pieceTitle: 'Two piece',
-            pieceBy: 'Paul Klee',
-            year: '1969',
-            image: './img/2-klee.jpg'
-          },
-          {
-            harvardId: 126,
-            pieceTitle: 'Red piece',
-            pieceBy: 'Paul Klee',
-            year: '1969',
-            image: './img/3-klee.jpg'
-          },
-          {
-            harvardId: 127,
-            pieceTitle: 'Blue piece',
-            pieceBy: 'Paul Klee',
-            year: '1969',
-            image: './img/4-klee.jpg'
-          }
-        ]
+        description: 'Practice, style, and trends define fashion. Fashion in turn defines the people that wear it. Who is wearing what and why? Whether the ninth or the nineteenth century identity is channeled through clothing. Class, power, and prestige are communicated through color, material, and cut. From Tuxedos to tunics each piece of clothing communicates something unique about who these people are and what they want to present. The tour will focus on the subjects and how their clothing illustrates who they want to represent'
       })
     }
+    this.getStops();
+  }
+
+  getStops() {
+    let objectQuery = objectNumbers.join(' OR ');
+    axios.get(`/object?apikey=${ api_key }&objectnumber=${objectQuery}`)
+    .then( res => {
+      this.setState({
+        stops:  res.data.records
+      });
+    });
   }
 
   render() {
@@ -69,9 +60,9 @@ export default class TourOverview extends Component {
             this.state.stops.map( ( stop, i ) => {
               return (
                 <div key={ i }>
-                  <img src={ stop.image } width='80'/>
-                  <h3>{ stop.pieceTitle }</h3>
-                  <span>{ stop.pieceBy }, { stop.year }</span>
+                  <img src={ stop.primaryimageurl } width='80'/>
+                  <h3>{ stop.title }</h3>
+                  <span>{ stop.people[0].name }, { stop.accessionyear }</span>
                 </div>
               )
             })
