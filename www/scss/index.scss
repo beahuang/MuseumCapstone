@@ -5,6 +5,7 @@
 @import 'components/_home';
 @import 'components/_browseScreen';
 @import 'components/_timeline';
+@import 'components/_tourOverview';
 @import 'components/_customizeTour';
 
 $navHeight: 65px;
@@ -62,9 +63,13 @@ nav {
 .button {
   color: white;
   background: #6B23F5;
-  padding: 15px 40px;
+  padding: 15px 30px;
   border-radius: 5px;
   display: inline-block;
+  margin-right: 15px;
+  a {
+    color: white;
+  }
 }
 
 .arrow {

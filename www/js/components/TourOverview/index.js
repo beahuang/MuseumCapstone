@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Arrow from '../../icons/Arrow.js';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import config from '../../config';
@@ -49,25 +50,30 @@ export default class TourOverview extends Component {
   render() {
     return (
       <div>
-        <img src={ this.state.featuredImg }/>
-        <h2>{ this.state.title }</h2>
-        <p>{ this.state.tags }</p>
-        <div className='button'>Start Tour</div>
-        <div className='button'><Link to='customize-tour'>Customize Tour</Link></div>
-        <p>{ this.state.description }</p>
-        <div>
-          <h3>Tour Overview</h3>
-          {
-            this.state.stops.map( ( stop, i ) => {
-              return (
-                <div key={ i }>
-                  <img src={ stop.primaryimageurl } width='80'/>
-                  <h3>{ stop.title }</h3>
-                  <span>{ stop.people[0].name }, { stop.accessionyear }</span>
-                </div>
-              )
-            })
-          }
+        <div className='tour-overview--featured-img-wrapper'>
+          <Link to='/'><Arrow className='arrow--white arrow--left'/></Link>
+          <img src={ this.state.featuredImg }/>
+        </div>
+        <div className='tour-overview--content-wrapper'>
+          <h1 className='tour-overview--title'>{ this.state.title }</h1>
+          <p className='tour-overview--tags'>{ this.state.tags }</p>
+          <div className='button'>Start Tour</div>
+          <div className='button'><Link to='customize-tour'>Customize Tour</Link></div>
+          <p>{ this.state.description }</p>
+          <div>
+            <h3>Tour Overview</h3>
+            {
+              this.state.stops.map( ( stop, i ) => {
+                return (
+                  <div key={ i }>
+                    <img src={ stop.primaryimageurl } width='80'/>
+                    <h3>{ stop.title }</h3>
+                    <span>{ stop.people[0].name }, { stop.accessionyear }</span>
+                  </div>
+                )
+              })
+            }
+          </div>
         </div>
       </div>
     );
