@@ -1,0 +1,23 @@
+.tour-overview--featured-img-wrapper {
+  max-height: 300px;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+  .arrow--left {
+    float: left;
+    margin: 20px 0;
+    position: absolute;
+  }
+}
+.tour-overview--content-wrapper {
+  margin: 20px 25px;
+}
+
+.tour-overview--title {
+  margin-bottom: 5px;
+}
+
+.tour-overview--tags {
+  margin-top: 0;
+}

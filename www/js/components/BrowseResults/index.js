@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AddPieceModal from '../AddPieceModal';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default class BrowseResults extends Component {
   constructor() {
@@ -41,9 +41,9 @@ export default class BrowseResults extends Component {
                   {
                     this.props.isTourActive
                     ? <img className='browse-screen__image' src={ item.primaryimageurl }/>
-                    : <NavLink to='/browse' activeClassName='active'>
+                    : <Link to='/browse'>
                         <img className='browse-screen__image' src={ item.primaryimageurl }/>
-                      </NavLink>
+                      </Link>
                   }
                 </li>
               )

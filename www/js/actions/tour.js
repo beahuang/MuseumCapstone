@@ -20,3 +20,10 @@ export const setTourActive = bool => {
     isTourActive: bool
   }
 }
+
+export const createTour = tour => {
+  return {
+    type: types.CREATE_TOUR,
+    tour: tour
+  }
+}

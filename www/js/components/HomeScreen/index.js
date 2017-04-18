@@ -11,7 +11,7 @@ const sliderSettings = {
   centerMode: true
 };
 
-export default class TourScreen extends Component {
+export default class HomeScreen extends Component {
   constructor() {
     super();
     this.state = {
@@ -28,66 +28,62 @@ export default class TourScreen extends Component {
           <div className="tour-container">
             <div className="featured-card">
               <FeaturedCard
-                link=''
-                text='Mauri'
-                src='featured.png'
-                text='Art, Design, and Bauhaus'
-                tags={ ['Germany', 'Design'] }
+                src='western-fashion.png'
+                title='Western Fashion: Fabric and Finery'
+                tags={ ['Design', 'Clothing', 'International'] }
                 buttonText='Preview Tour'
-                />
+              />
             </div>
           </div>
           <div className="tour-container">
             <div className="featured-card">
               <FeaturedCard
-                link=''
-                text='Mauri'
                 src='featured.png'
-                text='Art, Design, and Bauhaus'
+                title='Art, Design, and Bauhaus'
                 tags={ ['Germany', 'Design'] }
                 buttonText='Preview Tour'
-                />
+              />
             </div>
           </div>
 
           <div className="tour-container">
-            <div className="card-section-labels"> 
+            <div className="card-section-labels">
               <p className="card-section-label card-section-label--title"><span>Tour by mood</span></p>
               <p className="card-section-label card-section-label--more"><span>See all ></span></p>
             </div>
             <div className="card-section-cards">
-              <div className="card"><Card text='Mauri' src='mood.png'/></div>
-              <div className="card"><Card text='Fusce' src='mood.png'/></div>
+              <div className="card"><Card title='Mauri' src='mood.png'/></div>
+              <div className="card"><Card title='Fusce' src='mood.png'/></div>
             </div>
           </div>
 
           <div className="tour-container">
-            <div className="card-section-labels"> 
+            <div className="card-section-labels">
               <p className="card-section-label card-section-label--title"><span>Tour by theme</span></p>
               <p className="card-section-label card-section-label--more"><span>See all ></span></p>
             </div>
-            <div className="card-section-cards">  
-              <div className="card"><Card text='Fusce' src='theme.png'/></div>
-              <div className="card"><Card text='Vesti' src='theme.png'/></div>
+            <div className="card-section-cards">
+              <div className="card"><Card title='Fusce' src='theme.png'/></div>
+              <div className="card"><Card title='Vesti' src='theme.png'/></div>
             </div>
           </div>
 
           <div className="tour-container">
-            <div className="card-section-labels"> 
+            <div className="card-section-labels">
               <p className="card-section-label card-section-label--title"><span>Tour by color</span></p>
               <p className="card-section-label card-section-label--more"><span>See all ></span></p>
             </div>
-            <div className="card-section-cards">  
-              <div className="card"><Card text='Nam' src='color.png'/></div>
-              <div className="card"><Card text='Donec' src='color.png'/></div>
+            <div className="card-section-cards">
+              <div className="card"><Card title='Nam' src='color.png'/></div>
+              <div className="card"><Card title='Donec' src='color.png'/></div>
             </div>
           </div>
 
           <div className="tour-container tour-container--custom">
             <p className="card-section-label card-section-label--title"><span>Do your thing</span></p>
             <div className="card-section-cards">
-              <div className="card card-no-img"><Card text='Make my own tour'/></div>
-              <div className="card card-no-img"><Card text='I just want to wander'/></div>
+              <div className="card card-no-img"><Card title='Make my own tour'/></div>
+              <div className="card card-no-img"><Card title='I just want to wander'/></div>
             </div>
           </div>
         </div>
