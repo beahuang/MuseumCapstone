@@ -1,12 +1,15 @@
+@import './_react-tab.scss';
+
 .piece-screen {
   @extend .vh-100;
   background-color: $black-purple;
   color: white;
+
+  overflow-y: auto;
 }
 
 .piece-sc-header {
   background-color: transparentize(black, 0.68);
-  background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
 
@@ -59,6 +62,26 @@
     &:focus,
     &:active {
       background-color: $light-purple;
+    }
+  }
+}
+
+.piece-sc-body {
+  padding-bottom: 1rem;
+  overflow: auto;
+
+  [role=tablist] {
+    padding: 26px 0;
+  }
+
+  [role=tabpanel] {
+    padding: 0px 30px;
+
+    ul.no-bullet {
+      li {
+        margin: .5rem auto;
+        line-height: 1.3rem;
+      }
     }
   }
 }

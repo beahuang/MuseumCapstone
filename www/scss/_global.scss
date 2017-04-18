@@ -13,6 +13,8 @@ $gray-med: #9B9B9B;
 $gray-dark-med: #5B5665;
 $gray-dark: #4A4A4A;
 
+$faded-white: transparentize(white, .6);
+
 $shadow: 1px 2px 8px 4px rgba(0,0,0,.06);
 $purple-gradient:  linear-gradient(to right, $purple , $light-purple);
 

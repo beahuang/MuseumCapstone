@@ -1,0 +1,33 @@
+.react-tabs [role=tablist] {
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.react-tabs [role=tab] {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-bottom: none;
+  bottom: -1px;
+  position: relative;
+  list-style: none;
+  margin: 6px 12px;
+  padding-bottom: .25em;
+  cursor: pointer;
+
+  font-weight: bold;
+
+  &[aria-selected=true] {
+    color: white;
+    border: 0; // @HACK removes ridiculously styled bevel.
+    border-bottom: 1px solid $purple;
+  }
+
+  &[aria-selected=false] {
+    color: $faded-white;
+  }
+}
+
+.react-tabs [role=tab][aria-disabled=true] {
+  color: $faded-white;
+  cursor: default;
+}
