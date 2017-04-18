@@ -8,8 +8,8 @@ import HomeScreen from '../HomeScreen';
 import TimelineScreen from '../TimelineScreen';
 import MapScreen from '../MapScreen';
 import BrowseContainer from '../../containers/BrowseContainer';
-import TourOverview from '../TourOverview';
-import CustomizeTour from '../CustomizeTour';
+import TourOverview from '../../containers/TourOverviewContainer';
+import CustomizeTour from '../../containers/CustomizeTourContainer';
 
 const ConnectedRouter = ({ store }) => (
   <Provider store={ store }>
