@@ -75,7 +75,30 @@
   }
 
   [role=tabpanel] {
+    h3 {
+      padding-left: 10px;
+    }
+
     padding: 0px 30px;
+
+    ul.yes-bullet {
+      font-weight: lighter;
+      padding: 0px 10px;
+      li {
+        margin: 1rem auto;
+        line-height: 1.5em;
+
+        &:before {
+          /* Unicode bullet symbol */
+          content: '\2022 ';
+          /* Bullet color */
+          color: $purple;
+          float: left;
+          margin: 0 0 0 -1em;
+          width: 1em;
+        }
+      }
+    }
 
     ul.no-bullet {
       li {

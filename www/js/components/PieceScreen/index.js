@@ -50,9 +50,21 @@ const PieceContent = (props) => {
       className='piece-sc-body'
     >
       <TabList>
+        <Tab>Did You Know?</Tab>
         <Tab>Details</Tab>
       </TabList>
 
+      <TabPanel>
+        <h3>Highlights</h3>
+        <ul className='yes-bullet'>
+          <li>Renoir painted Gabrielle Renard (1879–1959) more than two hundred times. In several of the
+          portraits, she wears the same informal, square-necked gown seen here.
+          </li>
+          <li>Renoir he adopted the style in response to the ancient murals of Pompeii and Herculaneum, which he
+          had seen in Naples.
+          </li>
+        </ul>
+      </TabPanel>
       <TabPanel>
         <ul className='no-bullet'>
           <li>Classification: { piece.classification }</li>

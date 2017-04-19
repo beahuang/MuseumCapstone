@@ -14,8 +14,6 @@
   padding-bottom: .25em;
   cursor: pointer;
 
-  font-weight: bold;
-
   &[aria-selected=true] {
     color: white;
     border: 0; // @HACK removes ridiculously styled bevel.
