@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 
 export function Card( props ) {
   const src = props.src ? './img/' + props.src : '';
+  const link = props.link ? props.link : '/tour';
 
   return (
-    <Link to='/tour'>
+    <Link to={ link }>
       <div className={ src ? 'card--image' : 'card--text' }>
         { src && <img src={ src } /> }
         <p>{ props.title }</p>
