@@ -66,6 +66,7 @@ const PieceContent = (props) => {
       <TabList>
         <Tab>Did You Know?</Tab>
         <Tab>Questions</Tab>
+        <Tab>Related Pieces</Tab>
         <Tab>Details</Tab>
       </TabList>
 
@@ -99,6 +100,9 @@ const PieceContent = (props) => {
             </p>
           </AccordionItem>
         </Accordion>
+      </TabPanel>
+      <TabPanel>
+        Related Pieces here.
       </TabPanel>
       <TabPanel>
         <ul className='no-bullet'>
