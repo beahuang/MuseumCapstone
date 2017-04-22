@@ -23,9 +23,9 @@
   &[aria-selected=false] {
     color: $faded-white;
   }
-}
 
-.react-tabs [role=tab][aria-disabled=true] {
-  color: $faded-white;
-  cursor: default;
+  &[aria-disabled=true] {
+    color: $faded-white;
+    cursor: default;
+  }
 }

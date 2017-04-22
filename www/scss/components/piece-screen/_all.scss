@@ -70,12 +70,12 @@
   padding-bottom: 1rem;
   overflow: auto;
 
-  [role=tablist] {
+  > [role=tablist] {
     padding: 26px 0;
   }
 
-  [role=tabpanel] {
-    h3 {
+  > [role=tabpanel] {
+    > h3 {
       padding-left: 10px;
     }
 
@@ -106,5 +106,30 @@
         line-height: 1.3rem;
       }
     }
+  }
+}
+
+.react-sanfona-item svg.arrow {
+  float: right;
+
+  @extend .ease;
+}
+
+.react-sanfona-item:not(.react-sanfona-item-expanded) {
+  .arrow {
+    @extend .arrow--down;
+  }
+}
+
+.react-sanfona-item-expanded {
+  .arrow {
+    @extend .arrow--left;
+  }
+}
+
+.react-sanfona-item:not(:last-of-type) {
+  border-bottom: 1px transparentize(white, .6) solid;
+  .react-sanfona-item-body-wrapper {
+    padding-bottom: 1em;
   }
 }

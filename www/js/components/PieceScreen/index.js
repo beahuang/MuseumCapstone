@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Accordion, AccordionItem } from 'react-sanfona';
 
+import Arrow from '../../icons/Arrow';
 import CameraIcon from '../../icons/Camera';
 
 class PieceScreen extends Component {
@@ -42,15 +44,28 @@ class PieceScreen extends Component {
 }
 
 const PieceContent = (props) => {
+
+  const QuestionTitle = (props) => {
+    return (
+      <h3 { ...props }>
+        { props.children }
+        <Arrow
+          className='arrow arrow--white'
+        />
+      </h3>
+    )
+  }
+
   const { piece } = props;
 
   return (
     <Tabs
-      selectedIndex={ 0 }
+      selectedIndex={ 1 }
       className='piece-sc-body'
     >
       <TabList>
         <Tab>Did You Know?</Tab>
+        <Tab>Questions</Tab>
         <Tab>Details</Tab>
       </TabList>
 
@@ -64,6 +79,26 @@ const PieceContent = (props) => {
           had seen in Naples.
           </li>
         </ul>
+      </TabPanel>
+      <TabPanel>
+        <Accordion
+          allowMultiple={ true }
+        >
+          <AccordionItem title={ <QuestionTitle>Who Is Renoir</QuestionTitle> }>
+            <p>
+              Renoir was a leading painter in the development of the impressionist style later in
+              the 19th century. He celebrated beauty and feminine sensuality. This painting is
+              located in this room also.
+            </p>
+          </AccordionItem>
+          <AccordionItem title={ <QuestionTitle>Who Is Gabriel?</QuestionTitle> }>
+            <p>
+              Gabriel was a cousin of Aline Victorine Charigot Renoir who ended up marrying the
+              painter Renoir. By 1908, she had been employed in Renoir’s household for fourteen
+              years, as a nanny, housekeeper, model, and companion to the aging artist.
+            </p>
+          </AccordionItem>
+        </Accordion>
       </TabPanel>
       <TabPanel>
         <ul className='no-bullet'>
