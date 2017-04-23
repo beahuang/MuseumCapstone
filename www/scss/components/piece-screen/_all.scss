@@ -71,7 +71,12 @@
   overflow: auto;
 
   > [role=tablist] {
+    overflow: auto;
+    white-space: nowrap;
     padding: 26px 0;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   > [role=tabpanel] {
