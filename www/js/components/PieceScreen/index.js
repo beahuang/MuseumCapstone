@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { Accordion, AccordionItem } from 'react-sanfona';
 
+import RelatedPieces from '../../containers/RelatedPieces';
+
 import Arrow from '../../icons/Arrow';
 import CameraIcon from '../../icons/Camera';
 import CommentIcon from '../../icons/Comment';
@@ -47,8 +49,17 @@ class PieceScreen extends Component {
   }
 }
 
+/**
+ * Helper component that contains all the Body Content for a Piece Solo Page.
+ * @param props should contain a single PIECE object, as pulled from the Harvard Art Musemum API.
+ */
 const PieceContent = (props) => {
 
+  /**
+   * Custom component for wrapping around rc-collapse header.
+   * This gives each expanding section the nice animated arrow.
+   * @param props -- Should at minimum be a string, but it isn't too picky
+   */
   const QuestionTitle = (props) => {
     return (
       <h3 { ...props }>
@@ -64,7 +75,7 @@ const PieceContent = (props) => {
 
   return (
     <Tabs
-      selectedIndex={ 1 }
+      selectedIndex={ 2 }
       className='piece-sc-body'
     >
       <TabList>
@@ -106,7 +117,7 @@ const PieceContent = (props) => {
         </Accordion>
       </TabPanel>
       <TabPanel>
-        Related Pieces here.
+        <RelatedPieces piece={ piece }/>
       </TabPanel>
       <TabPanel>
         <ul className='no-bullet'>

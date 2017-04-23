@@ -121,6 +121,7 @@
   }
 }
 
+// Question Dropdown contents.
 .react-sanfona-item svg.arrow {
   float: right;
 
@@ -144,4 +145,14 @@
   .react-sanfona-item-body-wrapper {
     padding-bottom: 1em;
   }
+}
+
+// Piece List Masonry container.
+
+.piece-list__container {
+  @extend .browse-screen__container;
+}
+
+.piece-list__image {
+  @extend .browse-screen__image;
 }
