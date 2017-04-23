@@ -45,7 +45,11 @@
 }
 
 .piece-sc-button-row {
+  display: flex;
+  flex-direction: row;
+
   button {
+    margin-right: 15px;
     border: 0;
     background-color: $purple;
     color: white;
@@ -53,10 +57,13 @@
     height: 55px;
     @extend .br-100;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     > svg {
       fill: white;
       width: 27px;
-      // padding-top: -1px;
     }
 
     &:focus,

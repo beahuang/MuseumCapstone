@@ -4,12 +4,16 @@ import { Accordion, AccordionItem } from 'react-sanfona';
 
 import Arrow from '../../icons/Arrow';
 import CameraIcon from '../../icons/Camera';
+import CommentIcon from '../../icons/Comment';
+import HeartIcon from '../../icons/Heart';
 
 class PieceScreen extends Component {
   _buttonRow() {
     return (
       <div className='piece-sc-button-row'>
         <button><CameraIcon/></button>
+        <button><HeartIcon/></button>
+        <button><CommentIcon/></button>
       </div>
     )
   }
