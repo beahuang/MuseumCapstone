@@ -40,7 +40,7 @@ class BrowseContainer extends Component {
     let onView = isOnView ? '&gallery=any': '';
     axios.get(`/object?apikey=${ api_key }&hasimage=1${keyword}${onView}&q=imagepermissionlevel:0`)
     .then( res => {
-      console.log( res.data.records )
+      // console.log( res.data.records )
       this.setState({
         browsableItems:  res.data.records
       });
