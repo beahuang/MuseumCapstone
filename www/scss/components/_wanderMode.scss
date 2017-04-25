@@ -1,0 +1,18 @@
+.wander-container {
+  background: $dark-purple;
+  min-height: 100vh;
+}
+.wander-content {
+  margin: 0 15px;
+  color: white;
+}
+.wander--title {
+  padding-top: 20px;
+  margin: 0;
+}
+
+.beacon-piece {
+  img {
+    width: 100%;
+  }
+}

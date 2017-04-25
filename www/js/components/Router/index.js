@@ -10,6 +10,7 @@ import MapScreen from '../MapScreen';
 import BrowseContainer from '../../containers/BrowseContainer';
 import TourOverview from '../../containers/TourOverviewContainer';
 import CustomizeTour from '../../containers/CustomizeTourContainer';
+import WanderContainer from '../../containers/WanderContainer';
 
 const ConnectedRouter = ({ store }) => (
   <Provider store={ store }>
@@ -23,6 +24,7 @@ const ConnectedRouter = ({ store }) => (
               <Route path="/browse" render={ matchProps => <BrowseContainer { ...matchProps }/> }/>
               <Route path='/tour' render={ matchProps => <TourOverview { ...matchProps }/> } />
               <Route path='/customize-tour' render={ matchProps => <CustomizeTour { ...matchProps }/> } />
+              <Route path='/wander' render={ matchProps => <WanderContainer { ...matchProps }/> } />
             </Switch>
           } />
         <Navigation/>
