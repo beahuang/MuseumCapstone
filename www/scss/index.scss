@@ -8,6 +8,8 @@
 @import 'components/_tourOverview';
 @import 'components/_customizeTour';
 @import 'components/_wanderMode';
+@import 'components/_piece-screen';
+@import 'components/piece-screen/_all';
 
 $navHeight: 65px;
 
@@ -76,12 +78,17 @@ nav {
 .arrow {
   &--white {
     fill: white;
-    transform: rotate(-90deg);
-  }
-  &--down {
-    transform: rotate(180deg);
   }
   &--purple {
     fill: $purple;
+  }
+  &--left {
+    transform: rotate(-90deg);
+  }
+  &--up {
+    transform: rotate( 0deg );
+  }
+  &--down {
+    transform: rotate( -180deg );
   }
 }

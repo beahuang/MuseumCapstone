@@ -1,0 +1,158 @@
+@import './_react-tab.scss';
+
+.piece-screen {
+  @extend .vh-100;
+  background-color: $black-purple;
+  color: white;
+
+  overflow-y: auto;
+}
+
+.piece-sc-header {
+  background-color: transparentize(black, 0.68);
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  background-size: cover;
+  color: white;
+  height: 400px;
+  width: 100%;
+
+  @extend .dt;
+}
+
+.piece-sc-header-content {
+  padding-left: 30px;
+  @extend .dtc;
+  vertical-align: middle;
+
+  h1, h4 {
+    @extend .w-70;
+    text-shadow: 1px 1px 2px black;
+  }
+
+  h1 {
+    @extend .f2;
+    @extend .lh-title;
+    @extend .fw7;
+    margin: 0;
+  }
+
+  h4 {
+    @extend .fw2;
+    font-size: 1rem;
+  }
+}
+
+.piece-sc-button-row {
+  display: flex;
+  flex-direction: row;
+
+  button {
+    margin-right: 15px;
+    border: 0;
+    background-color: $purple;
+    color: white;
+    width: 55px;
+    height: 55px;
+    @extend .br-100;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > svg {
+      fill: white;
+      width: 27px;
+    }
+
+    &:focus,
+    &:active {
+      background-color: $light-purple;
+    }
+  }
+}
+
+.piece-sc-body {
+  padding-bottom: 1rem;
+  overflow: auto;
+
+  > [role=tablist] {
+    overflow: auto;
+    white-space: nowrap;
+    padding: 26px 0;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  > [role=tabpanel] {
+    > h3 {
+      padding-left: 10px;
+    }
+
+    padding: 0px 30px;
+
+    ul.yes-bullet {
+      font-weight: lighter;
+      padding: 0px 10px;
+      li {
+        margin: 1rem auto;
+        line-height: 1.5em;
+
+        &:before {
+          /* Unicode bullet symbol */
+          content: '\2022 ';
+          /* Bullet color */
+          color: $purple;
+          float: left;
+          margin: 0 0 0 -1em;
+          width: 1em;
+        }
+      }
+    }
+
+    ul.no-bullet {
+      li {
+        margin: .5rem auto;
+        line-height: 1.3rem;
+      }
+    }
+  }
+}
+
+// Question Dropdown contents.
+.react-sanfona-item svg.arrow {
+  float: right;
+
+  @extend .ease;
+}
+
+.react-sanfona-item:not(.react-sanfona-item-expanded) {
+  .arrow {
+    @extend .arrow--down;
+  }
+}
+
+.react-sanfona-item-expanded {
+  .arrow {
+    @extend .arrow--left;
+  }
+}
+
+.react-sanfona-item:not(:last-of-type) {
+  border-bottom: 1px transparentize(white, .6) solid;
+  .react-sanfona-item-body-wrapper {
+    padding-bottom: 1em;
+  }
+}
+
+// Piece List Masonry container.
+
+.piece-list__container {
+  @extend .browse-screen__container;
+}
+
+.piece-list__image {
+  @extend .browse-screen__image;
+}
