@@ -7,6 +7,7 @@ import { ActionCreators } from '../../actions';
 import ReactModal from 'react-modal';
 
 import PieceScreen from '../../components/PieceScreen';
+import ArrivalModal from '../../components/ArrivalModal';
 
 import config from '../../config';
 
@@ -63,7 +64,7 @@ class Piece extends Component {
                isOpen={ this.state.showModal }
                contentLabel='You Have Arrived'
             >
-              <button onClick={ this.handleCloseModal }>Close Modal</button>
+              <ArrivalModal piece={ this.state.piece } onClose={ this.handleCloseModal }/>
             </ReactModal>
             <PieceScreen piece={ this.state.piece }/>
           </div>
