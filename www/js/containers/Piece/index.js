@@ -4,17 +4,32 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ActionCreators } from '../../actions';
 
+import ReactModal from 'react-modal';
+
+import PieceScreen from '../../components/PieceScreen';
+
 import config from '../../config';
 
 const api_key = config.HARVARD_ART_MUSEUM_API_KEY;
 axios.defaults.baseURL = 'http://api.harvardartmuseums.org';
 
-import PieceScreen from '../../components/PieceScreen'
-
 class Piece extends Component {
   constructor() {
     super();
-    this.state = { };
+    this.state = {
+      showModal: true
+    };
+
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
+  }
+
+  handleOpenModal() {
+    this.setState({ showModal: true });
+  }
+
+  handleCloseModal() {
+    this.setState({ showModal: false });
   }
 
   componentWillMount() {
@@ -42,16 +57,34 @@ class Piece extends Component {
   render() {
     return (
       <div>
-        { this.state.piece ?
-          <PieceScreen piece={ this.state.piece }/> :
-          this.state.error }
+        { this.props.isTourActive && this.state.piece ?
+          <div>
+            <ReactModal
+               isOpen={ this.state.showModal }
+               contentLabel='You Have Arrived'
+            >
+              <button onClick={ this.handleCloseModal }>Close Modal</button>
+            </ReactModal>
+            <PieceScreen piece={ this.state.piece }/>
+          </div>
+          : this.state.piece ?
+            <PieceScreen piece={ this.state.piece }/> :
+            this.state.error }
+
       </div>
     )
   }
+}
+
+function mapStateToProps( state ) {
+  return {
+    tourItems: state.tourItems,
+    isTourActive: state.isTourActive
+  };
 }
 
 function mapDispatchToProps( dispatch ) {
   return bindActionCreators( ActionCreators, dispatch );
 }
 
-export default connect( null, mapDispatchToProps )( Piece );
+export default connect( mapStateToProps, mapDispatchToProps )( Piece );
