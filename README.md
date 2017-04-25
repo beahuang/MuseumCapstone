@@ -13,7 +13,14 @@
 ## Development
 1. Clone this repository, and change directory into this repository.
 2. Run `npm install` to install everything
-3. Run `npm run watch` to start webpack and the browser-sync server and start developing like it's a normal web app
+3. [Get a Harvard Art Museum API key.](http://www.harvardartmuseums.org/collections/api)
+    Create a new config file at `www/js/config.js`. The contents should be as follows:
+    ```js
+    export default {
+      HARVARD_ART_MUSEUM_API_KEY : __YOUR KEY AS A STRING HERE__,
+    }
+    ```
+4. Run `npm run watch` to start webpack and the browser-sync server and start developing like it's a normal web app
 
 ## How to get Up and Running on a Phone
 1. Run `npm install -g cordova` to install cordova
@@ -44,29 +51,34 @@ android-studio`.
 2. Select the App
 3. Run on a device
 
-```
-MuseumCapstone
-│   README.md
-│   package.json   -- Defines all the dependencies needed that are installed
-│                     using `npm install`     
-└───www
-│   │   index.js    -- entry point of app
-│   │───containers  -- react components who handle data fetching
-│   │───components  -- other react components
-│   │───icons       -- Icon components
-│   │───actions     -- Redux actions
-│   │───reducers    -- Redux reducers
-│   │───config.js   -- File with api keys, not github version controlled
+## Manifest
 
-│   hooks       -- cordova build related folders
-│   platforms   -- cordova build related folders
-└───plugins     -- cordova build related folders
+```
+├── README.md
+├── package.json      -- Defines all the dependencies needed that are installed
+│                        using `npm install`
 │
-└───webpack.config.js -- module bundler, allows us to use es6 and other buildtools
-└───.babelrc          -- babel options for es6 features
-└───.editorconfig     -- makes sure all text editors use the same convention
-└───.eslintrc.js      -- code style guide
-└───.gitignore        -- says what files github should ignore
-└───.nvmrc            -- what version of node should be used
-└───config.xml        -- global configuration file for cordova application's behavior
+├── hooks             -- cordova build related folders
+├── platforms         -- cordova build related folders
+├── plugins           -- cordova build related folders
+├── webpack.config.js -- module bundler, allows us to use es6 and other buildtools
+├── .babelrc          -- babel options for es6 features
+├── .editorconfig     -- makes sure all text editors use the same convention
+├── .eslintrc.js      -- code style guide
+├── .gitignore        -- says what files git should ignore.
+├── .nvmrc            -- what version of node should be used
+├── config.xml        -- global configuration file for cordova application's behavior
+└───www               -- Source Code for the app.
+    ├── img
+    ├── index.html    -- Base index.html that React.js will shove the app into.
+    ├── js
+    │   ├── index.js    -- entry point of app
+    │   ├── containers  -- react components who handle data fetching
+    │   ├── components  -- other react components
+    │   ├── icons       -- Icon components
+    │   ├── actions     -- Redux actions
+    │   ├── reducers    -- Redux reducers
+    │   └── config.js   -- File with api keys, not git version controlled.
+    └── scss            -- All stylings that don't rely on dynamic content
+
 ```
