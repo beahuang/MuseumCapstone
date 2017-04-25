@@ -86,13 +86,14 @@ export default class TourOverview extends Component {
             {
               this.state.tourItems.map( ( item, i ) => {
                 return (
-                  <li key={ i }>
+                  <li className='customize-grid--container' key={ i }>
                     <img className='customize-grid--img' src={ item.primaryimageurl }/>
                   </li>
                 )
               })
             }
           </ul>
+          <div className='center-button'>Start Tour</div>
         </div>
       </div>
     );

@@ -29,9 +29,17 @@
 
 .customize-grid {
   columns: 3;
+  overflow: hidden;
+  
+
+  .customize-grid--container {
+    margin-bottom: 25px;
+    height: 100px;
+  }
+
   .customize-grid--img {
     width: 100%;
-    height: auto;
+    // height: auto;
   }
 }
 
@@ -47,8 +55,8 @@
 .customize-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: 1px solid #000000;
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   border-radius: 50%;
   background: #ffffff;
   cursor: pointer;
@@ -58,8 +66,8 @@
 /* All the same stuff for Firefox */
 .customize-slider::-moz-range-thumb {
   border: 1px solid #000000;
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   border-radius: 50%;
   background: #ffffff;
   cursor: pointer;

@@ -72,6 +72,17 @@ nav {
   }
 }
 
+.center-button {
+  @extend .button;
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 60%;
+  font-size: 16px;
+}
+
 .arrow {
   &--white {
     fill: white;
