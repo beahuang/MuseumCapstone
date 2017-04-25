@@ -63,6 +63,8 @@ class Piece extends Component {
             <ReactModal
                isOpen={ this.state.showModal }
                contentLabel='You Have Arrived'
+               className='arrival-modal__wrapper'
+               overlayClassName='arrival-modal__background'
             >
               <ArrivalModal piece={ this.state.piece } onClose={ this.handleCloseModal }/>
             </ReactModal>

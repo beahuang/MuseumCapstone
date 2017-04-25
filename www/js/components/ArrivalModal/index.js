@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 
 class ArrivalModal extends Component {
   render() {
+    // <button onClick={ () => this.props.onClose() }>Close Modal</button>
+
     return (
       <div>
-        {this.props.piece.title}
-        <button onClick={ () => this.props.onClose() }>Close Modal</button>
+        You have arrived at {this.props.piece.title}
       </div>
     );
   }
