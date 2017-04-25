@@ -9,7 +9,9 @@
 }
 
 .piece-sc-header {
-  background-color: transparentize(black, 0.68);
+  background-color: transparentize($black-purple, 0.75);
+  background-blend-mode: darken;
+
   background-position: center center;
   background-repeat: no-repeat;
 

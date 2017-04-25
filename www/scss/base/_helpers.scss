@@ -1,0 +1,25 @@
+$lines--content-gutter: 20px;
+$lines--min-width: 20px;
+
+.has-lines {
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  &:before,
+  &:after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background: #ccc;
+    min-width: $lines--min-width;
+  }
+
+  &:before {
+    margin-right: $lines--content-gutter;
+  }
+
+  &:after {
+    margin-left: $lines--content-gutter;
+  }
+}

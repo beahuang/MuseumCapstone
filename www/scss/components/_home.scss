@@ -131,7 +131,11 @@
 }
 
 .tour-container--custom {
-  width: auto;
+  width: 100%;
+
+  .card-section-label--title {
+    @extend .has-lines;
+  }
 }
 
 .card-no-img {
