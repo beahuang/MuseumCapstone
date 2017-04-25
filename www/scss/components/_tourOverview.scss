@@ -21,3 +21,19 @@
 .tour-overview--tags {
   margin-top: 0;
 }
+
+.tour-overview-piece {
+  margin-bottom: 20px;
+
+  &--img, &--content {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &--title {
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  &--content {
+    padding-left: 10px;
+  }
+}
