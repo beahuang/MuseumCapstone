@@ -10,7 +10,7 @@ export default class BrowseResults extends Component {
     }
   }
 
-  setActiveItem =  item => {
+  setActiveItem = item => {
     this.setState({
       activeItem: item
     })
@@ -41,7 +41,7 @@ export default class BrowseResults extends Component {
                   {
                     this.props.isTourActive
                     ? <img className='browse-screen__image' src={ item.primaryimageurl }/>
-                    : <Link to='/browse'>
+                    : <Link to={`/piece/${item.objectid}`}>
                         <img className='browse-screen__image' src={ item.primaryimageurl }/>
                       </Link>
                   }
