@@ -21,3 +21,24 @@
 .tour-overview--tags {
   margin-top: 0;
 }
+
+.tour-overview--stop {
+  margin: 25px 0;
+}
+
+.tour-overview--stop-name,
+.tour-overview--stop-desc {
+  position: absolute;
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.tour-overview--stop-name {
+  font-weight: 700;
+}
+
+.tour-overview--stop-desc {
+  margin-top: 35px;
+}
+

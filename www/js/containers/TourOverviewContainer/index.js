@@ -59,16 +59,16 @@ export default class TourOverview extends Component {
           <p className='tour-overview--tags'>{ this.state.tags }</p>
           <div className='button'>Start Tour</div>
           <div className='button'><Link to='customize-tour'>Customize Tour</Link></div>
-          <p>{ this.state.description }</p>
+          <p className='tour-overview--description'>{ this.state.description }</p>
           <div>
-            <h3>Tour Overview</h3>
+            <h2 className='tour-overview--label'>Tour Overview</h2>
             {
               this.state.stops.map( ( stop, i ) => {
                 return (
-                  <div key={ i }>
-                    <img src={ stop.primaryimageurl } width='80'/>
-                    <h3>{ stop.title }</h3>
-                    <span>{ stop.people[0].name }, { stop.accessionyear }</span>
+                  <div className='tour-overview--stop' key={ i }>
+                    <img className='tour-overview--stop-img' src={ stop.primaryimageurl } width='80'/>
+                    <h3 className='tour-overview--stop-name'>{ stop.title }</h3>
+                    <span className='tour-overview--stop-desc'>{ stop.people[0].name }, { stop.accessionyear }</span>
                   </div>
                 )
               })
