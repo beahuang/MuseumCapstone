@@ -60,3 +60,21 @@
     box-sizing: border-box;
   }
 }
+
+.browse-screen__header-container {
+  display: flex;
+  justify-content: space-between;
+  wrap: wrap;
+}
+
+.browse-screen__header {
+  display: inline-block;
+}
+
+.browse-screen__filter {
+  display: inline-block;
+  text-align: right;
+  margin-top: 46px;
+  font-weight: 500;
+  color: $gray-med; 
+}

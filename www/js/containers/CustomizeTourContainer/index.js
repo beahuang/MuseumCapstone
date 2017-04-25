@@ -73,7 +73,7 @@ export default class TourOverview extends Component {
         <Link to='tour'><Arrow className='arrow--white arrow--left'/></Link>
         <div className='customize-tour--wrapper'>
           <p className='customize-tour--label'>Your Tour</p>
-          <h1>{ this.state.tourTime }</h1>
+          <h1 className='customize-tour--header'>{ this.state.tourTime }</h1>
           <input
             id="tourTime"
             type="range"
@@ -86,13 +86,14 @@ export default class TourOverview extends Component {
             {
               this.state.tourItems.map( ( item, i ) => {
                 return (
-                  <li key={ i }>
+                  <li className='customize-grid--container' key={ i }>
                     <img className='customize-grid--img' src={ item.primaryimageurl }/>
                   </li>
                 )
               })
             }
           </ul>
+          <div className='center-button'>Start Tour</div>
         </div>
       </div>
     );

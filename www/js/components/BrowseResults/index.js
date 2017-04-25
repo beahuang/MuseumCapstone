@@ -22,13 +22,12 @@ export default class BrowseResults extends Component {
         <input className='browse-input' type='search' readOnly placeholder='Search Collection'
           onClick={ () => { this.props.setSearching( true ) } }
           value={ this.props.searchTerm ? this.props.searchTerm : '' }/>
-        <div>
-          <h1>{ this.props.searchTerm ? this.props.searchTerm : 'Near You' }</h1>
+        <div className='browse-screen__header-container'>
+          <h1 className='browse-screen__header' >{ this.props.searchTerm ? this.props.searchTerm : 'Near You' }</h1>
           { this.props.searchTerm
-            ? <div>
-              <p onClick={ () => { this.props.setOnView( false ) } }>all</p>
-              <p onClick={ () => { this.props.setOnView( true ) } }>on view</p>
-              </div>
+            ? 
+              <p className='browse-screen__filter' onClick={ () => { this.props.setOnView( false ) } }>filter</p>
+              
             : null
           }
         </div>

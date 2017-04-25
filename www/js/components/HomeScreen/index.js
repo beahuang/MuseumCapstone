@@ -30,7 +30,7 @@ export default class HomeScreen extends Component {
             <div className='featured-card'>
               <FeaturedCard
                 src='western-fashion.png'
-                title='Western Fashion: Fabric and Finery'
+                title='Western Fashion'
                 tags={ ['Design', 'Clothing', 'International'] }
                 buttonText='Preview Tour'
               />
