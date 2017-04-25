@@ -8,6 +8,19 @@ class PieceList extends React.Component {
     }
   }
 
+  /**
+   * ~Lifecycle hook~
+   *
+   * Most-related pieces should not all be in the first column.
+   * so instead of
+   * [ 0 1 2 3 4  ] -> [ 0 3
+   *                     1 4
+   *                     2 - ]
+   * we can arrive at  [ 0 1
+   *                     2 3
+   *                     4 - ]
+   * and continue to use Flexbox columns for the masonry-like grid.
+   */
   componentWillReceiveProps(newProps) {
     const { pieces } = newProps
 
