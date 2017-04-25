@@ -23,7 +23,11 @@ class Navigation extends Component {
             <div className='nav__progress-bar'>
               {
                 this.props.tourItems.map( ( item, i ) => {
-                  return <div className='nav__progress-bar--item' key={ i }><Link className='nav__progress-bar--link' to={`/piece/${ item.id }`}></Link></div>
+                  return (
+                    <div className='nav__progress-bar--item' key={ i }>
+                      <Link className='nav__progress-bar--link' to={ `/piece/${ item.id }` }/>
+                    </div>
+                  )
                 })
               }
             </div>
