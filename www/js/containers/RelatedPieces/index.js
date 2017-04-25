@@ -36,7 +36,8 @@ class RelatedPieces extends React.Component {
     const sharedPerms = {
       gallery: 'any',
       hasimage: 1,
-      apikey: api_key
+      apikey: api_key,
+      q: 'imagepermissionlevel:0'
     }
 
     // First ditch attempt. This conditional branch will very likely not return anything,
