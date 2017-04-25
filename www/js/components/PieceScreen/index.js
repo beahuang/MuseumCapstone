@@ -75,7 +75,7 @@ const PieceContent = (props) => {
 
   return (
     <Tabs
-      selectedIndex={ 2 }
+      selectedIndex={ 0 }
       className='piece-sc-body'
     >
       <TabList>
