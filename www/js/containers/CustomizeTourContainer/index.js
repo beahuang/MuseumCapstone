@@ -73,7 +73,7 @@ export default class TourOverview extends Component {
         <Link to='tour'><Arrow className='arrow--white arrow--left'/></Link>
         <div className='customize-tour--wrapper'>
           <p className='customize-tour--label'>Your Tour</p>
-          <h1>{ this.state.tourTime }</h1>
+          <h1 className='customize-tour--header'>{ this.state.tourTime }</h1>
           <input
             id="tourTime"
             type="range"

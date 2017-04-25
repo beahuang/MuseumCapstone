@@ -14,11 +14,17 @@
 
 .customize-tour--wrapper {
   margin: 0 25px;
-  padding-top: 60px;
+  padding-top: 80px;
+}
+
+.customize-tour--header {
+  margin: 5px 0;
 }
 
 .customize-tour--label {
   margin: 0;
+  color: $gray-dark-med;
+  font-size: 18px;
 }
 
 .customize-grid {
@@ -33,8 +39,8 @@
   -webkit-appearance: none;
   background-color: $purple;
   width: 100%;
-  height: 5px;
-  margin: 20px 0;
+  height: 6px;
+  margin: 30px 0;
   outline: none;
 }
 /* Special styling for WebKit/Blink */
@@ -46,6 +52,7 @@
   border-radius: 50%;
   background: #ffffff;
   cursor: pointer;
+  box-shadow: $shadow;
 }
 
 /* All the same stuff for Firefox */
