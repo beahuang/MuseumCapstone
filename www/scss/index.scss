@@ -62,6 +62,36 @@ nav {
   }
 }
 
+.nav--in-tour {
+  color: white;
+  background: $dark-purple2;
+  p {
+    font-size: 12px;
+    text-align: center;
+  }
+  .nav__progress-bar {
+    position: absolute;
+    height: 15px;
+    width: 100%;
+    top: -12px;
+    background: $dark-purple2;
+    display: flex;
+    .nav__progress-bar--item {
+      &:first-of-type {
+        background: $purple;
+      }
+      background: $gray-dark-med;
+      width: inherit;
+      height: 3px;
+      margin: 3px;
+    }
+    .nav__progress-bar--link {
+      height: 2px;
+      display: block;
+    }
+  }
+}
+
 .button {
   color: white;
   background: #6B23F5;

@@ -1,5 +1,8 @@
 import React, { PropTypes, Component } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { ActionCreators } from '../../actions';
 
 import config from '../../config';
 
@@ -16,15 +19,24 @@ class Piece extends Component {
 
   componentWillMount() {
     axios.get(`/object/${this.props.match.params.id}?apikey=${ api_key }`)
-      .then((res) => {
-        if (!res.data.error) {
-          this.setState({
-            piece : res.data
-          })
-        } else {
-          this.setState({ error : res.data.error })
-        }
-      })
+    .then((res) => {
+      if (!res.data.error) {
+        this.setState({
+          piece : res.data
+        })
+      } else {
+        this.setState({ error : res.data.error })
+      }
+    })
+
+    if ( this.props.location.state ) {
+      this.setTourStates();
+    }
+  }
+
+  setTourStates() {
+    this.props.setTourActive( true );
+    this.props.createTour( this.props.location.state.stops );
   }
 
   render() {
@@ -38,4 +50,8 @@ class Piece extends Component {
   }
 }
 
-export default Piece;
+function mapDispatchToProps( dispatch ) {
+  return bindActionCreators( ActionCreators, dispatch );
+}
+
+export default connect( null, mapDispatchToProps )( Piece );

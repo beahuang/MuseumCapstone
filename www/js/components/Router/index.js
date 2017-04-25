@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider, connect } from 'react-redux';
 
-import Navigation from '../../components/Navigation';
+import Navigation from '../../containers/Navigation';
 
 import HomeScreen from '../HomeScreen';
 import TimelineScreen from '../TimelineScreen';

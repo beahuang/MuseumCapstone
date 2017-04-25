@@ -42,7 +42,7 @@ export default class TourOverview extends Component {
     axios.get(`/object?apikey=${ api_key }&objectnumber=${objectQuery}`)
     .then( res => {
       this.setState({
-        stops:  res.data.records
+        stops:  res.data.records.reverse()
       });
     });
   }
@@ -57,7 +57,13 @@ export default class TourOverview extends Component {
         <div className='tour-overview--content-wrapper'>
           <h1 className='tour-overview--title'>{ this.state.title }</h1>
           <p className='tour-overview--tags'>{ this.state.tags }</p>
-          <div className='button'>Start Tour</div>
+          <div className='button'>
+            { this.state.stops.length > 0 ?
+              <Link to={{ pathname: `/piece/${this.state.stops[0].id}`,
+                state: { inTour: true, stops: this.state.stops } }}>Start Tour</Link> :
+              <Link to=''>Start Tour</Link>
+            }
+          </div>
           <div className='button'><Link to='customize-tour'>Customize Tour</Link></div>
           <p>{ this.state.description }</p>
           <div>
