@@ -26,7 +26,7 @@ export default class WanderContainer extends Component {
         this.setState({
           position: pos.coords
         });
-        this.filterBeaconsBy( 30 );
+        this.filterBeaconsBy( 1000 );
       })
     }
     this.getBeacons();
@@ -44,23 +44,26 @@ export default class WanderContainer extends Component {
 
   filterBeaconsBy( feet ) {
     let filteredBeacons = this.state.beaconData.filter( beacon => {
-      let lat = beacon.latitude ? beacon.latitude : beacon.gimbal_latitude;
-      let long = beacon.longitude ? beacon.longitude : beacon.gimbal_longitude;
-      let distance = this.distance( lat, long, this.state.position.latitude, this.state.position.longitude );
+      const lat = beacon.latitude ? beacon.latitude : beacon.gimbal_latitude;
+      const long = beacon.longitude ? beacon.longitude : beacon.gimbal_longitude;
+      const distance = this.distance( lat, long, this.state.position.latitude, this.state.position.longitude );
 
       return distance < feet;
-    })
+    });
 
-    let beaconPieces = filteredBeacons.reduce( ( acc, val ) => {
-      acc.push( val.beacon_attributes.objectnumber );
-      return acc;
-    }, []);
+    let beaconPieces = filteredBeacons.map( beacon => {
+      const objectnumber = beacon.beacon_attributes.objectnumber;
+      return objectnumber;
+    });
 
-    this.getBeaconPieces( beaconPieces );
+    if ( filteredBeacons ) {
+      this.getBeaconPieces( beaconPieces );
+    }
+
   }
 
   getBeaconPieces( beaconPieces ) {
-    let objectQuery = beaconPieces.join(' OR ');
+    const objectQuery = beaconPieces.join(' OR ');
     axios.get(`/object?apikey=${ api_key }&objectnumber=${ objectQuery }`)
     .then( res => {
       this.setState({
@@ -69,12 +72,13 @@ export default class WanderContainer extends Component {
     });
   }
 
-  // helper function that returns distance in feet
+  // helper function that returns distance in feet (http://www.geodatasource.com/developers/javascript)
   distance( lat1, lon1, lat2, lon2 ) {
-    let radlat1 = Math.PI * lat1/180;
-    let radlat2 = Math.PI * lat2/180;
-    let theta = lon1 - lon2;
-    let radtheta = Math.PI * theta/180;
+    const radlat1 = Math.PI * lat1/180;
+    const radlat2 = Math.PI * lat2/180;
+    const theta = lon1 - lon2;
+    const radtheta = Math.PI * theta/180;
+
     let dist = Math.sin( radlat1 ) * Math.sin( radlat2 ) + Math.cos( radlat1 ) * Math.cos( radlat2 ) * Math.cos( radtheta );
     dist = Math.acos( dist );
     dist = dist * 180/Math.PI;
