@@ -30,16 +30,16 @@
 .customize-grid {
   columns: 3;
   overflow: hidden;
-  
+
 
   .customize-grid--container {
     margin-bottom: 25px;
     height: 100px;
+    overflow: hidden;
   }
 
   .customize-grid--img {
     width: 100%;
-    // height: auto;
   }
 }
 

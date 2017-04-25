@@ -36,6 +36,12 @@
   height: 180px;
   box-shadow: $shadow;
 
+  .featured-card--img-wrapper {
+    display: inline-block;
+    max-width: 50%;
+    overflow: hidden;
+  }
+
   .featured-card--img {
     padding: 10px;
     height: 160px;
@@ -57,14 +63,8 @@
 
     .featured-card--tags {
       padding: 0;
-      margin-bottom: 20px;
-
-      .featured-card--tag {
-        @extend p;
-        display: inline-block;
-        padding-right: 10px;
-        color: $gray-dark-med;
-      }
+      margin: 10px 0;
+      color: $gray-dark-med;
     }
 
     .featured-card--button {
