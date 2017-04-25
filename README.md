@@ -43,3 +43,30 @@ android-studio`.
 1. Open Xcode and make sure .xcodeproj file is selected in the left panel
 2. Select the App
 3. Run on a device
+
+```
+MuseumCapstone
+│   README.md
+│   package.json   -- Defines all the dependencies needed that are installed
+│                     using `npm install`     
+└───www
+│   │   index.js    -- entry point of app
+│   │───containers  -- react components who handle data fetching
+│   │───components  -- other react components
+│   │───icons       -- Icon components
+│   │───actions     -- Redux actions
+│   │───reducers    -- Redux reducers
+│   │───config.js   -- File with api keys, not github version controlled
+
+│   hooks       -- cordova build related folders
+│   platforms   -- cordova build related folders
+└───plugins     -- cordova build related folders
+│
+└───webpack.config.js -- module bundler, allows us to use es6 and other buildtools
+└───.babelrc          -- babel options for es6 features
+└───.editorconfig     -- makes sure all text editors use the same convention
+└───.eslintrc.js      -- code style guide
+└───.gitignore        -- says what files github should ignore
+└───.nvmrc            -- what version of node should be used
+└───config.xml        -- global configuration file for cordova application's behavior
+```
