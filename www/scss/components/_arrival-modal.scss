@@ -1,10 +1,10 @@
 // Applied by ReactModal component
 .arrival-modal__wrapper {
   position: absolute;
-  top: 40px;
-  left: 40px;
-  right: 40px;
-  bottom: 40px;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px + 65px;
   color: white;
   overflow: auto;
   outline: none;
@@ -18,4 +18,36 @@
   right: 0;
   bottom: 0;
   background-color: $black-purple;
+}
+
+.arrival-modal__content {
+  text-align: center;
+
+  h3,
+  h5 {
+    margin: 0;
+  }
+
+  h5 {
+    @extend .f3;
+    @extend .lh-copy;
+    font-weight: normal;
+  }
+
+  h3 {
+    @extend .f2;
+    @extend .lh-title;
+    font-weight: bold;
+  }
+
+  p {
+    text-align: left;
+  }
+}
+
+.arrival-modal-piece__image {
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  clip-path: circle();
 }

@@ -31,8 +31,9 @@ class ArrivalModal extends Component {
     // <button onClick={ () => this.props.onClose() }>Close Modal</button>
 
     return (
-      <div>
-        You have arrived at {this.props.piece.title}
+      <div className='arrival-modal__content'>
+        <h5>You’ve arrived!</h5>
+        <h3>Take some time to look</h3>
 
         <div className='timer'>
           <h1>{this.state.count}</h1>
@@ -44,6 +45,11 @@ class ArrivalModal extends Component {
               className='button'
               onClick={ () => this.stopTimer() }>Stop</button>
           </div>
+
+          <img
+            className='arrival-modal-piece__image'
+            src={ `${this.props.piece.primaryimageurl}?height=400&width=400` }
+          />
 
           <p>
             What do you see?<br/>
